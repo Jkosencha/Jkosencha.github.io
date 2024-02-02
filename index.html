@@ -113,19 +113,19 @@
                     </div>
             </div>
             <div class="work">
-                <img src="images/pic4.jpg">
+                <img src="images/h1.png">
                 <div class="layer">
                     <h3>Hospital Management System</h3>
                     <p>An online hospital management system.</p>
-                    <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    <a href="HospitalMS.html"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
                 </div>
             </div>
             <div class="work">
-                <img src="images/pic2.jpg">
+                <img src="images/l1.jpg">
                 <div class="layer">
                     <h3>Online Shopping App</h3>
                     <p>Ecommerce android application system.</p>
-                    <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    <a href="OnlineLA.html"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
                 </div>
             </div>
         </div>
@@ -202,14 +202,27 @@
           e.preventDefault()
           fetch(scriptURL, { method: 'POST', body: new FormData(form)})
             .then(response => {
-                msg.innerHTML = "message sent successfuly"
+                msg.innerHTML = "message sent successfuly";
+
+                sendEmail();
+
                 setTimeout(function(){
-                    msg.innerHTML = ""
+                    msg.innerHTML = "";
                 },5000)
                 form.reset()
             })
-            .catch(error => console.error('Error!', error.message))
-        })
+            .catch(error => {
+                console.error('Error!', error.message);
+            });
+        });
+         // Function to send an email using Google Apps Script
+         function sendEmail() {
+            google.script.run.sendEmail(
+                form.elements['Name'].value,
+                form.elements['Email'].value,
+                form.elements['Message'].value
+            );
+        }
       </script>
 </body>
 </html>
