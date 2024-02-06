@@ -39,7 +39,7 @@
                 <div class="about-col-2">
                     <h1 class="sub-title">About Me</h1>
                     <p>I am an undergraduate undertaking Software Development, self-sent to learn, research and work as a
-                        Front-End Developer.
+                        Software Developer.
                         Looking to leverage my experience by building responsive and scalable websites, web applications and
                         designs, Android Applications,
                         and to solve interesting problems that delight end-users. In my work as a developer,
@@ -52,15 +52,15 @@
                     </div>
                     <div class="tab-contents active-tab" id="skills">
                         <ul>
-                            <li><span>UI/UX</span><br>Designing Web/App Interfaces</li>
-                            <li><span>Web Development</span><br>Web application Development</li>
+                            <li><span>Software System Application</span><br>Designing Web application and software systems</li>
+                            <li><span>Web Design & Development </span><br>Website Design and Development</li>
                             <li><span>App Development</span><br>Android application Development</li>
                         </ul>
                     </div>
                     <div class="tab-contents" id="experience">
                         <ul>
                             <li><span>Degree</span><br>Software Development</li>
-                            <li><span>Certificate</span><br>Web application Development</li>
+                            <li><span>Certificate</span><br>Web design and Development</li>
                             <li><span>Certificate</span><br>Android application Development</li>
                         </ul>
                     </div>
@@ -80,21 +80,23 @@
                 <i class="fa-solid fa-code"></i>
                 <h2>Web Design</h2>
                 <p>Website Design and Development. <br>
-                    Front-End Development using HTML, CSS, JavaScript and ReactJs <br>
-                Back-End Development using Python, PHP and MySQL</p>
-                <a href="#">Learn more</a>
+                    We offer end-to-end website design and development services, ensuring a seamless user experience. 
+                    From concept to deployment, we bring your vision to life with cutting-edge technologies.</p>
+                
             </div>
             <div>
                 <i class="fa-solid fa-crop-simple"></i>
-                <h2>UI/UX Design</h2>
-                <p>Designing attractive and unique web and application interfaces and designs that are proffessional and customizable</p>
-                <a href="#">Learn more</a>
+                <h2>Software System Application </h2>
+                <p>Developing software systems to optimize your workflows and boost productivity. Our team designs tailored solutions 
+                    that cater to your unique requirements, ranging from online management systems to offline applications. </p>
+                
             </div>
             <div>
                 <i class="fa-brands fa-app-store"></i>
                 <h2>Android App Development</h2>
-                <p>Developing Android Mobile Applications using Kotlin and Firebase, providing secured and friendly systems</p>
-                <a href="#">Learn more</a>
+                <p>Our Android app development team is proficient in Kotlin and Firebase, ensuring your mobile applications are not only feature-rich but also secure and user-friendly.
+                     We focus on creating applications that provide a seamless and enjoyable user experience.</p>
+                
             </div>
         </div>
     </div>
@@ -113,7 +115,7 @@
                     </div>
             </div>
             <div class="work">
-                <img src="images/h1.png">
+                <img src="images/h01.png">
                 <div class="layer">
                     <h3>Hospital Management System</h3>
                     <p>An online hospital management system.</p>
@@ -121,7 +123,7 @@
                 </div>
             </div>
             <div class="work">
-                <img src="images/l1.jpg">
+                <img src="images/l01.jpg">
                 <div class="layer">
                     <h3>Online Shopping App</h3>
                     <p>Ecommerce android application system.</p>
@@ -148,13 +150,17 @@
                 </div>
             </div>
             <div class="contact-right">
-                <form name="submit-to-google-sheet">
+                <form id="submit-form" action="/submit-form" method="post">
+                <!-- <form name="submit-to-google-sheet"> -->
                     <input type="text" name="Name" placeholder="Your Name" required>
                     <input type="email" name="Email" placeholder="Your Email" required>
                     <textarea name="Message" cols="30" rows="6" placeholder="Your Message"></textarea>
                     <button type="submit" class="btn btn2">Submit</button>
                 </form>
                 <span id="msg"></span>
+                <!-- <a href="mailto:jenniferkosencha@gmail.com">
+                    <button class="btn btn2">Send Email</button>
+                </a> -->
             </div>
         </div>
     </div>
@@ -193,7 +199,29 @@
         }
 
     </script>
-    <script>
+    <!-- Add this script to the end of your HTML file -->
+<script>
+    document.getElementById('submit-form').addEventListener('submit', function (e) {
+      e.preventDefault();
+  
+      const formData = new FormData(this);
+      fetch('/submit-form', {
+        method: 'POST',
+        body: formData
+      })
+        .then(response => response.text())
+        .then(message => {
+          document.getElementById('msg').innerHTML = message;
+          this.reset();
+        })
+        .catch(error => {
+          console.error('Error:', error);
+          document.getElementById('msg').innerHTML = 'Internal Server Error';
+        });
+    });
+  </script>
+  
+    <!-- <script>
         const scriptURL = 'https://script.google.com/macros/s/AKfycby2dBe9ZZQrgzL4UEc_zOmZbn7rIaO-OGQa7419TJoSFT-tHM0IyOPYeX06384l4joNpg/exec'
         const form = document.forms['submit-to-google-sheet']
         const msg = document.getElementById("msg")
@@ -204,12 +232,13 @@
             .then(response => {
                 msg.innerHTML = "message sent successfuly";
 
+                form.reset();
+
                 sendEmail();
 
                 setTimeout(function(){
                     msg.innerHTML = "";
-                },5000)
-                form.reset()
+                },5000);
             })
             .catch(error => {
                 console.error('Error!', error.message);
@@ -223,6 +252,6 @@
                 form.elements['Message'].value
             );
         }
-      </script>
+      </script> -->
 </body>
 </html>

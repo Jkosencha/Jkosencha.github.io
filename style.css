@@ -1,6 +1,7 @@
 *{
     margin: 0;
     padding: 0;
+    line-height: 1.5em;
     font-family: 'poppins', sans-serif;
     box-sizing: border-box;
 }
@@ -14,7 +15,7 @@ body{
 #header{
     width: 100%;
     height: 100vh;
-    background-image:linear-gradient(rgba(0,0,0,0.20), rgba(0, 0, 0, 0.50)), url(images/background.jpg);
+    background-image:linear-gradient(rgba(1, 54, 59, 0.2), rgba(0, 0, 0, 0.5)), url(images/background2.jpg);
     background-attachment: fixed;
     background-size: cover;
     background-position: center;
@@ -24,6 +25,7 @@ body{
 }
 nav{
     display: flex;
+    position: fixed;
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
@@ -32,7 +34,7 @@ nav{
     padding: 5px 0;
 }
 .logo{
-    width: 60px;
+    width: 50px;
     border-radius: 50px;
     background: linear-gradient(rgba(0,0,0,0.20), rgba(0, 0, 0, 0.20));
 }
@@ -256,7 +258,7 @@ nav ul li a:hover::after{
 .btn:hover{
     background: #1d7fa0;
 }
-/*----------------HMS-------------- */
+/*----------------screenshots-------------- */
 .screenshots {
     display: flex;
     flex-wrap: wrap;
@@ -265,7 +267,7 @@ nav ul li a:hover::after{
 }
 
 .screenshots img {
-    width: calc(25% - 20px); /* Adjust the width as needed, considering padding */
+    width: calc(30% - 10px); /* Adjust the width as needed, considering padding */
     height: auto;
     margin: 10px;
 }
