@@ -15,13 +15,14 @@ body{
 #header{
     width: 100%;
     height: 100vh;
-    background-image:linear-gradient(rgba(1, 54, 59, 0.2), rgba(0, 0, 0, 0.5)), url(images/background2.jpg);
+    background-image:linear-gradient(rgba(1, 54, 59, 0.2), rgba(0, 0, 0, 0.5)), url(images/background.webp);
     background-attachment: fixed;
     background-size: cover;
     background-position: center;
 }
 .container{
-    padding: 10px 10%;
+    padding: 10px 10px;
+    margin: 10px;
 }
 nav{
     display: flex;
@@ -31,7 +32,7 @@ nav{
     flex-wrap: wrap;
     width: 100%;
     margin: auto;
-    padding: 5px 0;
+    padding: 15px;
 }
 .logo{
     width: 50px;
@@ -42,6 +43,7 @@ nav ul li{
     display: inline-block;
     list-style: none;
     margin: 10px 20px;
+    padding: 2px;
 }
 nav ul li a{
     color: #fff;
@@ -345,7 +347,7 @@ nav .fa-solid{
 
 @media only screen and (max-width: 600px){
     #header{
-        background-image: linear-gradient(rgba(0,0,0,0.20), rgba(0, 0, 0, 0.20)), url(images/pic10.jpg);
+        background-image: linear-gradient(rgba(0,0,0,0.20), rgba(0, 0, 0, 0.20)), url(images/background-mobile.jpg);
     }
     .header-text{
         margin-top: 100%;
@@ -362,7 +364,7 @@ nav .fa-solid{
         background: #1d7fa0;
         position: fixed;
         top: 0;
-        right: -200px;
+        right: 0;
         width: 200px;
         height: 100vh;
         padding-top: 50px;
@@ -403,16 +405,16 @@ nav .fa-solid{
     }
     
 }
-/* Media queries for mobile responsiveness */
+
 @media only screen and (max-width: 768px) {
     .screenshots img {
-        width: calc(50% - 20px); /* Adjust the width for smaller screens */
+        width: calc(50% - 20px); 
     }
 }
 
 @media only screen and (max-width: 480px) {
     .screenshots img {
-        width: calc(100% - 20px); /* Adjust the width for even smaller screens */
+        width: calc(100% - 20px); 
     }
 }
 #msg{

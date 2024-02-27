@@ -19,6 +19,7 @@
                 <li><a href="#services">Services</a></li>
                 <li><a href="#portfolio">Portfolio</a></li>
                 <li><a href="#contact">Contact</a></li>
+                
                 <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
             </ul>
             <i class="fa-solid fa-bars" onclick="openmenu()"></i>
@@ -65,7 +66,7 @@
                         </ul>
                     </div>
                     <div class="tab-contents" id="education">
-                        <a href="images/JENNIFER KOSENCHA CV.pdf" download class="btn btn2">Download CV</a>
+                        <a href="images/Jennifer Kosencha-Software-Dev-CV.pdf" download class="btn btn2">Download CV</a>
                     </div>
                 </div>
             </div>
@@ -150,17 +151,14 @@
                 </div>
             </div>
             <div class="contact-right">
-                <form id="submit-form" action="/submit-form" method="post">
-                <!-- <form name="submit-to-google-sheet"> -->
-                    <input type="text" name="Name" placeholder="Your Name" required>
-                    <input type="email" name="Email" placeholder="Your Email" required>
-                    <textarea name="Message" cols="30" rows="6" placeholder="Your Message"></textarea>
+                <form id="submit-form">
+                    <input type="text" id="userName" name="userName" placeholder="Your Name" required autocomplete="name">
+                    <input type="email" id="emailFrom" name="emailFrom" placeholder="Your Email" required autocomplete="email">
+                    <input type="tel" id="phoneNumber" name="phoneNumber" placeholder="Your Phone Number" required autocomplete="tel">
+                    <textarea name="message" id="message" cols="30" rows="6" placeholder="Your Message"></textarea>
                     <button type="submit" class="btn btn2">Submit</button>
                 </form>
                 <span id="msg"></span>
-                <!-- <a href="mailto:jenniferkosencha@gmail.com">
-                    <button class="btn btn2">Send Email</button>
-                </a> -->
             </div>
         </div>
     </div>
@@ -173,85 +171,68 @@
 
     <script>
 
-        var tablinks = document.getElementsByClassName("tab-links");
-        var tabcontents = document.getElementsByClassName("tab-contents");
+var tablinks = document.getElementsByClassName("tab-links");
+    var tabcontents = document.getElementsByClassName("tab-contents");
 
-        function opentab(tabname){
-            for(tablink of tablinks){
-                tablink.classList.remove("active-link");
-            }
-            for(tabcontent of tabcontents){
-                tabcontent.classList.remove("active-tab");
-            }
-            event.currentTarget.classList.add("active-link");
-            document.getElementById(tabname).classList.add("active-tab");
+    function opentab(tabname){
+        for(tablink of tablinks){
+            tablink.classList.remove("active-link");
         }
-
-    </script>
-    <script>
-        var sidemenu = document.getElementById("sidemenu");
-
-        function openmenu(){
-            sidemenu.style.right = "0";
+        for(tabcontent of tabcontents){
+            tabcontent.classList.remove("active-tab");
         }
-        function closemenu(){
-            sidemenu.style.right = "-200px";
-        }
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab");
+    }
 
-    </script>
-    <!-- Add this script to the end of your HTML file -->
-<script>
-    document.getElementById('submit-form').addEventListener('submit', function (e) {
-      e.preventDefault();
-  
-      const formData = new FormData(this);
-      fetch('/submit-form', {
-        method: 'POST',
-        body: formData
-      })
-        .then(response => response.text())
-        .then(message => {
-          document.getElementById('msg').innerHTML = message;
-          this.reset();
-        })
-        .catch(error => {
-          console.error('Error:', error);
-          document.getElementById('msg').innerHTML = 'Internal Server Error';
-        });
+    var sidemenu = document.getElementById("sidemenu");
+
+    function openmenu(){
+        sidemenu.style.right = "0";
+    }
+    
+    function closemenu(){
+        sidemenu.style.right = "-200px";
+    }
+
+        document.getElementById('submit-form').addEventListener('submit', async function (e) {
+  e.preventDefault();
+
+  const formData = new FormData(this);
+  const userName = formData.get("userName")
+  const fromEmail = formData.get("emailFrom")
+  const phoneNumber = formData.get("phoneNumber")
+  const message = formData.get("message")
+
+  const msg = document.getElementById("msg")
+
+  await fetch("https://myportfoliobackend-91pw.onrender.com/portfolio/email", {
+    method: "POST",
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      userName: userName,
+      fromEmail: fromEmail,
+      phoneNumber: phoneNumber,
+      message: message
+    })
+  })
+    .then((response) => response.text())
+    .then((data) => {
+      msg.innerHTML = data;
+    })
+    .catch((error) => {
+      console.error('Fetch error:', error);
+      msg.innerHTML = "An error occurred while submitting the form. Please try again later.";
+    })
+    .finally(() => {
+      this.reset();
     });
-  </script>
+});
+    </script>
+    
+    
   
-    <!-- <script>
-        const scriptURL = 'https://script.google.com/macros/s/AKfycby2dBe9ZZQrgzL4UEc_zOmZbn7rIaO-OGQa7419TJoSFT-tHM0IyOPYeX06384l4joNpg/exec'
-        const form = document.forms['submit-to-google-sheet']
-        const msg = document.getElementById("msg")
-      
-        form.addEventListener('submit', e => {
-          e.preventDefault()
-          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-            .then(response => {
-                msg.innerHTML = "message sent successfuly";
-
-                form.reset();
-
-                sendEmail();
-
-                setTimeout(function(){
-                    msg.innerHTML = "";
-                },5000);
-            })
-            .catch(error => {
-                console.error('Error!', error.message);
-            });
-        });
-         // Function to send an email using Google Apps Script
-         function sendEmail() {
-            google.script.run.sendEmail(
-                form.elements['Name'].value,
-                form.elements['Email'].value,
-                form.elements['Message'].value
-            );
-        }
-      </script> -->
 </body>
 </html>
