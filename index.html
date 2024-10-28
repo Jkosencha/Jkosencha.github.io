@@ -172,7 +172,7 @@
     <script>
 
 var tablinks = document.getElementsByClassName("tab-links");
-    var tabcontents = document.getElementsByClassName("tab-contents");
+var tabcontents = document.getElementsByClassName("tab-contents");
 
     function opentab(tabname){
         for(tablink of tablinks){
@@ -195,7 +195,8 @@ var tablinks = document.getElementsByClassName("tab-links");
         sidemenu.style.right = "-200px";
     }
 
-        document.getElementById('submit-form').addEventListener('submit', async function (e) {
+
+    document.getElementById('submit-form').addEventListener('submit', async function (e) {
   e.preventDefault();
 
   const formData = new FormData(this);
