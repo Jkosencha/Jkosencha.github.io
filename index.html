@@ -13,19 +13,18 @@
         <div class="container">
             <nav>
                 <img src="images/logo.png" class="logo">
-            <ul id="sidemenu">
-                <li><a href="#header">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#portfolio">Portfolio</a></li>
-                <li><a href="#contact">Contact</a></li>
-                
-                <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
-            </ul>
-            <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+                <ul id="sidemenu">
+                    <li><a href="#header" class="header" onclick="opentab('tab1'); closemenu();">Home</a></li>
+                    <li><a href="#about" onclick="opentab('about'); closemenu();">About</a></li>
+                    <li><a href="#services" onclick="opentab('services'); closemenu();">Services</a></li>
+                    <li><a href="#portfolio" onclick="opentab('portfolio'); closemenu();">Portfolio</a></li>
+                    <li><a href="#contact" onclick="opentab('contact'); closemenu();">Contact</a></li>
+                    <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
+                </ul>
+                <i class="fa-solid fa-bars" onclick="openmenu()"></i>
             </nav>
             <div class="header-text">
-                <H1>JKOSENCHA</H1>
+                <h1>JKOSENCHA</h1>
                 <p>SOFTWARE DEVELOPER</p>
             </div>
         </div>
@@ -169,69 +168,72 @@
 
 
 
-    <script>
-
-var tablinks = document.getElementsByClassName("tab-links");
-var tabcontents = document.getElementsByClassName("tab-contents");
-
-    function opentab(tabname){
-        for(tablink of tablinks){
+<script>
+    var tablinks = document.getElementsByClassName("tab-links");
+    var tabcontents = document.getElementsByClassName("tab-contents");
+    var sidemenu = document.getElementById("sidemenu");
+    
+    function opentab(tabname) {
+        for (tablink of tablinks) {
             tablink.classList.remove("active-link");
         }
-        for(tabcontent of tabcontents){
+        for (tabcontent of tabcontents) {
             tabcontent.classList.remove("active-tab");
         }
         event.currentTarget.classList.add("active-link");
         document.getElementById(tabname).classList.add("active-tab");
+        
+        closeSidebar(); // Close the sidebar when a tab is opened
     }
-
-    var sidemenu = document.getElementById("sidemenu");
-
-    function openmenu(){
+    
+    function openmenu() {
         sidemenu.style.right = "0";
     }
     
-    function closemenu(){
-        sidemenu.style.right = "-200px";
+    function closemenu() {
+        sidemenu.style.right = "-200px"; // Adjust based on your sidebar width
     }
-
-
+    
+    function closeSidebar() {
+        sidemenu.style.right = "-200px"; // Adjust this value based on your sidebar width
+    }
+    
+    // Form submission code (remains unchanged)
     document.getElementById('submit-form').addEventListener('submit', async function (e) {
-  e.preventDefault();
-
-  const formData = new FormData(this);
-  const userName = formData.get("userName")
-  const fromEmail = formData.get("emailFrom")
-  const phoneNumber = formData.get("phoneNumber")
-  const message = formData.get("message")
-
-  const msg = document.getElementById("msg")
-
-  await fetch("https://myportfoliobackend-91pw.onrender.com/portfolio/email", {
-    method: "POST",
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({
-      userName: userName,
-      fromEmail: fromEmail,
-      phoneNumber: phoneNumber,
-      message: message
-    })
-  })
-    .then((response) => response.text())
-    .then((data) => {
-      msg.innerHTML = data;
-    })
-    .catch((error) => {
-      console.error('Fetch error:', error);
-      msg.innerHTML = "An error occurred while submitting the form. Please try again later.";
-    })
-    .finally(() => {
-      this.reset();
+        e.preventDefault();
+        const formData = new FormData(this);
+        const userName = formData.get("userName")
+        const fromEmail = formData.get("emailFrom")
+        const phoneNumber = formData.get("phoneNumber")
+        const message = formData.get("message")
+        const msg = document.getElementById("msg")
+    
+        await fetch("https://myportfoliobackend-91pw.onrender.com/portfolio/email", {
+            method: "POST",
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                userName: userName,
+                fromEmail: fromEmail,
+                phoneNumber: phoneNumber,
+                message: message
+            })
+        })
+        .then((response) => response.text())
+        .then((data) => {
+            msg.innerHTML = data;
+        })
+        .catch((error) => {
+            console.error('Fetch error:', error);
+            msg.innerHTML = "An error occurred while submitting the form. Please try again later.";
+        })
+        .finally(() => {
+            this.reset();
+        });
     });
-});
     </script>
+    
     
     
   
