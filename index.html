@@ -1,251 +1,421 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JKOSENCHA PORTFOLIO WEBSITE</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="https://kit.fontawesome.com/e13d111ddf.js" crossorigin="anonymous"></script>
-</head>
-<body>
-    <div id="header">
-        <div class="container">
-            <nav>
-                <img src="images/logo.png" class="logo">
-                <ul id="sidemenu">
-                    <li><a href="#header" class="header" onclick="opentab('tab1'); closemenu();">Home</a></li>
-                    <li><a href="#about" onclick="opentab('about'); closemenu();">About</a></li>
-                    <li><a href="#services" onclick="opentab('services'); closemenu();">Services</a></li>
-                    <li><a href="#portfolio" onclick="opentab('portfolio'); closemenu();">Portfolio</a></li>
-                    <li><a href="#contact" onclick="opentab('contact'); closemenu();">Contact</a></li>
-                    <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
-                </ul>
-                <i class="fa-solid fa-bars" onclick="openmenu()"></i>
-            </nav>
-            <div class="header-text">
-                <h1>JKOSENCHA</h1>
-                <p>SOFTWARE DEVELOPER <br>& <br>IPTV Support Engineer</p>
-            </div>
-        </div>
-    </div>
-    <!---------------about--------------->
-    <div id="about">
-        <div class="container">
-            <div class="row">
-                <div class="about-col-1">
-                    <img src="images/pic5.jpg">
-                </div>
-                <div class="about-col-2">
-                    <h1 class="sub-title">About Me</h1>
-                    <p>I am a Software Developer, self-sent to learn, research and work.
-                        Looking to leverage my experience by building responsive and scalable websites, web applications and
-                        designs, Android Applications,
-                        and to solve interesting problems that delight end-users. <br>
-                        I am also a dedicated IPTV Support Engineer with hands-on experience in providing technical support, 
-                        installation, and maintenance for IPTV systems. <br>In my work as a software and IPTV Engineer,
-                        I've emphasized the importance of scalable and well-documented work.</p>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Jennifer Kosencha — Software Developer & IPTV Support Engineer. Building responsive websites, web apps, Android applications and IPTV systems."
+    />
+    <title>JKOSENCHA - Software Developer & IPTV Engineer</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Outfit:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/e13d111ddf.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <!-- NAVBAR -->
+    <nav id="navbar">
+      <a href="#header"
+        ><img src="images/logo.png" class="logo" alt="JKosencha logo"
+      /></a>
+      <ul id="sidemenu">
+        <li><a href="#header" onclick="closemenu()">Home</a></li>
+        <li><a href="#about" onclick="closemenu()">About</a></li>
+        <li><a href="#services" onclick="closemenu()">Services</a></li>
+        <li><a href="#portfolio" onclick="closemenu()">Portfolio</a></li>
+        <li><a href="#contact" onclick="closemenu()">Contact</a></li>
+      </ul>
+      <div class="menu-toggle" id="menuToggle" onclick="togglemenu()">
+        <i class="fa-solid fa-bars" id="iconBars"></i>
+        <i class="fa-solid fa-xmark" id="iconX"></i>
+      </div>
+    </nav>
 
-                    <div class="tab-titles">
-                        <p class="tab-links active-link" onclick="opentab('skills')">SKILLS</p>
-                        <p class="tab-links"onclick="opentab('experience')">ACHIEVEMENTS</p>
-                        <p class="tab-links"onclick="opentab('education')">CV</p>
-                    </div>
-                    <div class="tab-contents active-tab" id="skills">
-                        <ul>
-                            <li><span>Software System Application</span><br>Designing Web application and software systems</li>
-                            <li><span>Web Design & Development </span><br>Website Design and Development</li>
-                            <li><span>App Development</span><br>Android application Development</li>
-                            <li><span>IPTV Support</span><br>IPTV support and Installation</li>
-                        </ul>
-                    </div>
-                    <div class="tab-contents" id="experience">
-                        <ul>
-                            <li><span>Degree</span><br>Software Development</li>
-                            <li><span>Certificate</span><br>Web design and Development</li>
-                            <li><span>Certificate</span><br>Android application Development</li>
-                            <li><span>Internship</span><br>IPTV Support and Installation</li>
-                        </ul>
-                    </div>
-                    <div class="tab-contents" id="education">
-                        <a href="images/Jennifer Kosencha-Software-IPTV-Eng-CV.pdf" download class="btn btn2">Download CV</a>
-                    </div>
-                </div>
-            </div>
+    <!-- HERO -->
+    <section id="header">
+      <div class="hero-bg"></div>
+      <div class="hero-orb"></div>
+      <div class="container">
+        <div class="hero-content">
+          <p class="hero-eyebrow">Hello!</p>
+          <h1 class="hero-name">I'm JK<span>osen</span>cha</h1>
+          <div class="hero-roles">
+            <strong>Software Developer</strong><br />
+            Building scalable web apps, Android apps & digital systems.
+          </div>
+          <div class="hero-cta">
+            <a href="#portfolio" class="btn btn2">View My Work</a>
+            <a href="#contact" class="btn">Get in Touch</a>
+          </div>
         </div>
-    </div>
-<!---------------services--------------->
-<div id="services">
-    <div class="container">
-        <h1 class="sub-title">Services</h1>
-        <div class="services-list">
-            <div>
-                <i class="fa-solid fa-code"></i>
-                <h2>Web Dev</h2>
-                <p>Crafting responsive websites that provide engaging user experiences and functionality.
-                    </p>
-                    <a href="web.html" class="btn">Read more</a>
-                
-            </div>
-            <div>
-                <i class="fa-solid fa-crop-simple"></i>
-                <h2>System Dev </h2>
-                <p>Creating custom software solutions to enhance business processes and efficiency. </p>
-                    <a href="systemapp.html" class="btn">Read more</a>
-                
-            </div>
-            <div>
-                <i class="fa-brands fa-app-store"></i>
-                <h2>Android Dev</h2>
-                <p>Developing user-friendly mobile applications for Android devices using Kotlin.</p>
-                     <a href="android.html" class="btn">Read more</a>
-                
-            </div>
-            <div>
-                <i class="fa-solid fa-tv"></i>
-                <h2>IPTV Support</h2>
-                <p>Providing technical assistance for IPTV system setup, configuration and maintenance.</p>
-                    <a href="iptv.html" class="btn">Read more</a>
-                
-            </div>
-        </div>
-    </div>
-</div>
-<!---------------portfolio--------------->
-<div id="portfolio">
-    <div class="container">
-        <h1 class="sub-title">My Work</h1>
-        <div class="work-list">
-            <div class="work">
-                <img src="images/pic6.jpg">
-                    <div class="layer">
-                        <h3>Namelok Naretoi Website</h3>
-                        <p>A website of a CBO organisation.</p>
-                        <a href="https://NamelokNaretoi.github.io"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                    </div>
-            </div>
-            <div class="work">
-                <img src="images/h01.png">
-                <div class="layer">
-                    <h3>Hospital Management System</h3>
-                    <p>An online hospital management system.</p>
-                    <a href="HospitalMS.html"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                </div>
-            </div>
-            <div class="work">
-                <img src="images/l01.jpg">
-                <div class="layer">
-                    <h3>Online Shopping App</h3>
-                    <p>Ecommerce android application system.</p>
-                    <a href="OnlineLA.html"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                </div>
-            </div>
-        </div>
-        <a href="portfolio.html" class="btn">See more</a>
-    </div>
-</div>
-<!---------------contact--------------->
-<div id="contact">
-    <div class="container">
+      </div>
+      <div class="hero-scroll">Scroll</div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about">
+      <div class="container">
         <div class="row">
-            <div class="contact-left">
-                <h1 class="sub-title">Contact Me</h1>
-                <p> <i class="fa-solid fa-paper-plane"></i> jenniferkosencha@gmail.com</p>
-                <p> <i class="fa-solid fa-square-phone"></i> 0704239554</p>
-                <div class="social-icons">
-                    <a href="https://www.facebook.com/jennifer.kosencha.7"><i class="fa-brands fa-facebook"></i></a>
-                    <a href="https://twitter.com/JKosencha"><i class="fa-brands fa-twitter-square"></i></a>
-                    <a href="https://www.instagram.com/j_kosencha/"><i class="fa-brands fa-instagram"></i></a>
-                    <a href=""><i class="fa-brands fa-linkedin"></i></a>
-                </div>
+          <!-- Photo -->
+          <div class="about-col-1">
+            <div class="about-img-wrap">
+              <img src="images/pic5.jpg" alt="Jennifer Kosencha" />
             </div>
-            <div class="contact-right">
-                <form id="submit-form">
-                    <input type="text" id="userName" name="userName" placeholder="Your Name" required autocomplete="name">
-                    <input type="email" id="emailFrom" name="emailFrom" placeholder="Your Email" required autocomplete="email">
-                    <input type="tel" id="phoneNumber" name="phoneNumber" placeholder="Your Phone Number" required autocomplete="tel">
-                    <textarea name="message" id="message" cols="30" rows="6" placeholder="Your Message"></textarea>
-                    <button type="submit" class="btn btn2">Submit</button>
-                </form>
-                <span id="msg"></span>
+          </div>
+
+          <div class="about-col-2">
+            <span class="section-tag">Who I Am</span>
+            <h2 class="sub-title">About Me</h2>
+            <p>
+              I'm a self-driven Software Developer with a passion for building
+              responsive and scalable websites, web applications, and Android
+              apps that delight end-users. I've also supported and maintained
+              production systems in real commercial environments - which gave me
+              a ground-level understanding of how software performs under
+              pressure, and made me a sharper builder.
+            </p>
+
+            <div class="tab-titles">
+              <p
+                class="tab-links active-link"
+                onclick="opentab('skills', event)"
+              >
+                Skills
+              </p>
+              <p class="tab-links" onclick="opentab('experience', event)">
+                Achievements
+              </p>
+              <p class="tab-links" onclick="opentab('education', event)">CV</p>
             </div>
+
+            <div class="tab-contents active-tab" id="skills">
+              <ul>
+                <li>
+                  <span>Software Systems</span>Designing web applications and
+                  software systems
+                </li>
+                <li>
+                  <span>Web Design & Dev</span>End-to-end website design and
+                  development
+                </li>
+                <li>
+                  <span>Android Development</span>Android applications built
+                  with Kotlin & Firebase
+                </li>
+                <li>
+                  <span>Production Systems</span>Supporting and maintaining
+                  real-world systems at scale
+                </li>
+              </ul>
+            </div>
+            <div class="tab-contents" id="experience">
+              <ul>
+                <li><span>Degree</span>Software Development</li>
+                <li><span>Certificate</span>Web Design & Development</li>
+                <li><span>Certificate</span>Android Application Development</li>
+                <li>
+                  <span>Work Experience</span>Production systems support &
+                  maintenance
+                </li>
+              </ul>
+            </div>
+            <div class="tab-contents" id="education">
+              <a
+                href="images/Jennifer Kosencha-Software-IPTV-Eng-CV.pdf"
+                download
+                class="btn btn2"
+              >
+                <i class="fa-solid fa-download"></i> Download CV
+              </a>
+            </div>
+          </div>
         </div>
-    </div>
-    <div class="copyright">
-        <p>copyright &#169 2022, jenniferkosencha@gmail.com <i class="fa-sharp fa-solid fa-heart"></i> </p>
-    </div>
-</div>
+      </div>
+    </section>
 
+    <!-- SERVICES -->
+    <section id="services">
+      <div class="container">
+        <div class="services-header">
+          <div>
+            <span class="section-tag">What I Do</span>
+            <h2 class="sub-title">Services</h2>
+          </div>
+          <p>
+            Tailored digital solutions across web, mobile and systems
+            development.
+          </p>
+        </div>
 
+        <div class="services-list">
+          <div>
+            <i class="fa-solid fa-code"></i>
+            <h2>Web Dev</h2>
+            <p>
+              Crafting responsive websites that provide engaging user
+              experiences and functionality.
+            </p>
+            <a href="web.html"
+              >Read more</a>
+          </div>
+          <div>
+            <i class="fa-solid fa-server"></i>
+            <h2>System Dev</h2>
+            <p>
+              Creating custom software solutions to enhance business processes
+              and efficiency.
+            </p>
+            <a href="systemapp.html"
+              >Read more</a>
+          </div>
+          <div>
+            <i class="fa-brands fa-android"></i>
+            <h2>Android Dev</h2>
+            <p>
+              Developing user-friendly mobile applications for Android using
+              Kotlin and Firebase.
+            </p>
+            <a href="android.html"
+              >Read more</a>
+          </div>
+        </div>
+      </div>
+    </section>
 
-<script>
-    var tablinks = document.getElementsByClassName("tab-links");
-    var tabcontents = document.getElementsByClassName("tab-contents");
-    var sidemenu = document.getElementById("sidemenu");
-    
-    function opentab(tabname) {
-        for (tablink of tablinks) {
-            tablink.classList.remove("active-link");
-        }
-        for (tabcontent of tabcontents) {
-            tabcontent.classList.remove("active-tab");
-        }
-        event.currentTarget.classList.add("active-link");
+    <!-- PORTFOLIO -->
+    <section id="portfolio">
+      <div class="container">
+        <div class="portfolio-header">
+          <div>
+            <span class="section-tag">Selected Work</span>
+            <h2 class="sub-title">My Work</h2>
+          </div>
+          <a href="portfolio.html" class="btn">See All Projects</a>
+        </div>
+
+        <div class="work-list">
+          <div class="work">
+            <img src="images/pic6.jpg" alt="Namelok Naretoi Website" />
+            <div class="layer">
+              <h3>Namelok Naretoi</h3>
+              <p>Website for a CBO organisation.</p>
+              <a href="https://NamelokNaretoi.github.io" target="_blank"
+                >View Live <i class="fa-solid fa-arrow-up-right-from-square"></i
+              ></a>
+            </div>
+            <div class="work-label">
+              <h4>Namelok Naretoi Website</h4>
+              <span>Web Development</span>
+            </div>
+          </div>
+
+          <div class="work">
+            <img src="images/h01.png" alt="Hospital Management System" />
+            <div class="layer">
+              <h3>Hospital Management</h3>
+              <p>Full online hospital management system.</p>
+              <a href="HospitalMS.html"
+                >View Project
+                <i class="fa-solid fa-arrow-up-right-from-square"></i
+              ></a>
+            </div>
+            <div class="work-label">
+              <h4>Hospital Management System</h4>
+              <span>System Development</span>
+            </div>
+          </div>
+
+          <div class="work">
+            <img src="images/l01.jpg" alt="Online Shopping App" />
+            <div class="layer">
+              <h3>Leatherly Shopping App</h3>
+              <p>Ecommerce Android application.</p>
+              <a href="OnlineLA.html"
+                >View Project
+                <i class="fa-solid fa-arrow-up-right-from-square"></i
+              ></a>
+            </div>
+            <div class="work-label">
+              <h4>Online Shopping App</h4>
+              <span>Android Development</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <div class="container">
+        <div class="contact-row">
+          <!-- Left info -->
+          <div class="contact-left">
+            <span class="section-tag">Say Hello</span>
+            <h2 class="sub-title">Contact<br />Me</h2>
+            <div class="contact-detail">
+              <i class="fa-solid fa-envelope"></i>
+              <span>jenniferkosencha@gmail.com</span>
+            </div>
+            <div class="contact-detail">
+              <i class="fa-solid fa-phone"></i>
+              <span>0704 239 554</span>
+            </div>
+            <div class="social-icons">
+              <a href="https://twitter.com/JKosencha" aria-label="Twitter"
+                ><i class="fa-brands fa-x-twitter"></i
+              ></a>
+              <a
+                href="https://www.instagram.com/j_kosencha/"
+                aria-label="Instagram"
+                ><i class="fa-brands fa-instagram"></i
+              ></a>
+              <a href="" aria-label="LinkedIn"
+                ><i class="fa-brands fa-linkedin-in"></i
+              ></a>
+            </div>
+          </div>
+
+          <div class="contact-right">
+            <form id="submit-form">
+              <input
+                type="text"
+                id="userName"
+                name="userName"
+                placeholder="Your Name"
+                required
+                autocomplete="name"
+              />
+              <input
+                type="email"
+                id="emailFrom"
+                name="emailFrom"
+                placeholder="Your Email"
+                required
+                autocomplete="email"
+              />
+              <input
+                type="tel"
+                id="phoneNumber"
+                name="phoneNumber"
+                placeholder="Your Phone Number"
+                autocomplete="tel"
+              />
+              <textarea
+                name="message"
+                id="message"
+                rows="6"
+                placeholder="Your Message"
+              ></textarea>
+              <button type="submit" class="btn btn2">
+                <i class="fa-solid fa-paper-plane"></i> Send Message
+              </button>
+            </form>
+            <span id="msg"></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="copyright">
+        <p>
+          © 2024 JKOSENCHA &nbsp;·&nbsp; Built with
+          <i class="fa-solid fa-heart"></i> &nbsp;·&nbsp;
+          jenniferkosencha@gmail.com
+        </p>
+      </div>
+    </section>
+
+    <script>
+      // ── Tab switching ──
+      function opentab(tabname, event) {
+        document
+          .querySelectorAll(".tab-links")
+          .forEach((el) => el.classList.remove("active-link"));
+        document
+          .querySelectorAll(".tab-contents")
+          .forEach((el) => el.classList.remove("active-tab"));
+        if (event) event.currentTarget.classList.add("active-link");
         document.getElementById(tabname).classList.add("active-tab");
-        
-        closeSidebar(); // Close the sidebar when a tab is opened
-    }
-    
-    function openmenu() {
-        sidemenu.style.right = "0";
-    }
-    
-    function closemenu() {
-        sidemenu.style.right = "-200px"; // Adjust based on your sidebar width
-    }
-    
-    function closeSidebar() {
-        sidemenu.style.right = "-200px"; // Adjust this value based on your sidebar width
-    }
-    
-    // Form submission code (remains unchanged)
-    document.getElementById('submit-form').addEventListener('submit', async function (e) {
-        e.preventDefault();
-        const formData = new FormData(this);
-        const userName = formData.get("userName")
-        const fromEmail = formData.get("emailFrom")
-        const phoneNumber = formData.get("phoneNumber")
-        const message = formData.get("message")
-        const msg = document.getElementById("msg")
-    
-        await fetch("https://myportfoliobackend-91pw.onrender.com/portfolio/email", {
-            method: "POST",
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-                userName: userName,
-                fromEmail: fromEmail,
-                phoneNumber: phoneNumber,
-                message: message
-            })
-        })
-        .then((response) => response.text())
-        .then((data) => {
-            msg.innerHTML = data;
-        })
-        .catch((error) => {
-            console.error('Fetch error:', error);
-            msg.innerHTML = "An error occurred while submitting the form. Please try again later.";
-        })
-        .finally(() => {
-            this.reset();
+      }
+
+      // ── Mobile menu ──
+
+      function togglemenu() {
+        const menu = document.getElementById("sidemenu");
+        const isOpen = menu.style.right === "0px";
+        isOpen ? closemenu() : openmenu();
+      }
+      function openmenu() {
+        document.getElementById("sidemenu").style.right = "0";
+        document.getElementById("iconBars").style.opacity = "0";
+        document.getElementById("iconBars").style.transform = "rotate(90deg)";
+        document.getElementById("iconX").style.opacity = "1";
+        document.getElementById("iconX").style.transform = "rotate(0deg)";
+      }
+      function closemenu() {
+        document.getElementById("sidemenu").style.right = "-100%";
+        document.getElementById("iconBars").style.opacity = "1";
+        document.getElementById("iconBars").style.transform = "rotate(0deg)";
+        document.getElementById("iconX").style.opacity = "0";
+        document.getElementById("iconX").style.transform = "rotate(-90deg)";
+      }
+
+      document.addEventListener("click", function (e) {
+        const menu = document.getElementById("sidemenu");
+        const toggle = document.getElementById("menuToggle");
+        if (
+          menu.style.right === "0px" &&
+          !menu.contains(e.target) &&
+          !toggle.contains(e.target)
+        ) {
+          closemenu();
+        }
+      });
+
+      // ── Nav scroll style ──
+      window.addEventListener("scroll", () => {
+        const nav = document.getElementById("navbar");
+        nav.style.background =
+          window.scrollY > 60 ? "rgba(8,13,26,0.97)" : "rgba(8,13,26,0.88)";
+      });
+
+      // ── Contact form — opens default mail client ──
+      document
+        .getElementById("submit-form")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+          const name = document.getElementById("userName").value.trim();
+          const email = document.getElementById("emailFrom").value.trim();
+          const phone = document.getElementById("phoneNumber").value.trim();
+          const message = document.getElementById("message").value.trim();
+          const subject = encodeURIComponent("Portfolio Enquiry from " + name);
+          const body = encodeURIComponent(
+            "Name: " +
+              name +
+              "\n" +
+              "Email: " +
+              email +
+              "\n" +
+              "Phone: " +
+              phone +
+              "\n\n" +
+              message,
+          );
+          window.location.href =
+            "mailto:jenniferkosencha@gmail.com?subject=" +
+            subject +
+            "&body=" +
+            body;
+          document.getElementById("msg").textContent = "Opening your mail app…";
+          this.reset();
         });
-    });
     </script>
-    
-    
-    
-  
-</body>
+  </body>
 </html>

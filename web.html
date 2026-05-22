@@ -3,36 +3,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Website Development</title>
-    <link rel="stylesheet" href="infopages.css"> <!-- Link to the shared CSS file -->
+    <title>Web Development - JKOSENCHA</title>
+    <link rel="stylesheet" href="infopages.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/e13d111ddf.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>Website Development</h1>
-            <p>Your Vision, Our Expertise</p>
+    <nav class="top-nav">
+        <a href="index.html" class="back-link"><i class="fa-solid fa-arrow-left"></i> Back</a>
+        <span class="nav-label">Services / Web Development</span>
+    </nav>
+
+    <main class="page-wrapper">
+        <header class="page-hero">
+            <span class="tag">Service</span>
+            <h1>Website<br>Development</h1>
+            <p>Your vision, built for the web - responsive, fast, and beautifully crafted from concept to deployment.</p>
         </header>
 
-        <section class="intro">
-            <p>We offer end-to-end website design and development services, ensuring a seamless user experience. 
-            From concept to deployment, we bring your vision to life with cutting-edge technologies.</p>
+        <section class="info-section">
+            <h2>Overview</h2>
+            <p class="intro-text">End-to-end website design and development with a focus on seamless user experience. From landing pages to full web applications, every project is built with modern technologies and attention to detail.</p>
         </section>
 
-        <section class="services">
-            <h2>Our Services</h2>
-            <ul>
-                <li><strong>Responsive Design:</strong> Creating websites that look great on all devices.</li>
-                <li><strong>Front-End Development:</strong> Building interactive and user-friendly interfaces.</li>
-                <li><strong>Back-End Development:</strong> Developing robust server-side solutions.</li>
-                <li><strong>E-commerce Solutions:</strong> Implementing secure online shopping platforms.</li>
-            </ul>
+        <section class="info-section">
+            <h2>What I Do</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <p class="card-title">Responsive Design</p>
+                    <p>Pixel-perfect interfaces that look sharp on every screen size - mobile, tablet, and desktop.</p>
+                </div>
+                <div class="service-card">
+                    <p class="card-title">Front-End Development</p>
+                    <p>Interactive, accessible UI built with HTML, CSS, and JavaScript following best practices.</p>
+                </div>
+                <div class="service-card">
+                    <p class="card-title">Back-End Development</p>
+                    <p>Robust server-side solutions including APIs, databases, and authentication systems.</p>
+                </div>
+                <div class="service-card">
+                    <p class="card-title">E-Commerce Solutions</p>
+                    <p>Secure, user-friendly online shopping platforms with payment integration and inventory management.</p>
+                </div>
+            </div>
         </section>
 
-        <footer>
-            <h2>Contact Us</h2>
-            <p>If you're interested in our website development services or have any questions, feel free to reach out!</p>
-            <p>Email: <a href="mailto:jenniferkosencha@gmail.com">jenniferkosencha@gmail.com</a></p>
-        </footer>
-    </div>
+        <section class="info-section">
+            <h2>Technologies</h2>
+            <div class="skills-list">
+                <span class="skill-pill">HTML5 / CSS3</span>
+                <span class="skill-pill">JavaScript</span>
+                <span class="skill-pill">ReactJS</span>
+                <span class="skill-pill">TailwindCSS</span>
+                <span class="skill-pill">Responsive Design</span>
+                <span class="skill-pill">REST APIs</span>
+                <span class="skill-pill">Git</span>
+                <span class="skill-pill">Node.js</span>
+            </div>
+        </section>
+
+        <div class="contact-footer">
+            <div class="cta-text">
+                <h3>Interested in working together?</h3>
+                <p>Let's talk about your next web project.</p>
+            </div>
+            <a href="mailto:jenniferkosencha@gmail.com" class="cta-btn">
+                <i class="fa-solid fa-paper-plane"></i> Get in Touch
+            </a>
+        </div>
+    </main>
 </body>
 </html>
