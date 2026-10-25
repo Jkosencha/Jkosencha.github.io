@@ -6,15 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Jennifer Kosencha — Software Developer & IPTV Support Engineer. Building responsive websites, web apps, Android applications and IPTV systems."
+      content="Jennifer Kosencha — Software Developer in Nairobi building web applications, management systems and dashboards with JavaScript, React and Supabase."
     />
-    <title>JKOSENCHA - Software Developer & IPTV Engineer</title>
+    <title>Jennifer Kosencha - Software Developer</title>
+    <link rel="icon" type="image/png" href="images/logo.png" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://jkosencha.github.io/" />
+    <meta property="og:title" content="Jennifer Kosencha - Software Developer" />
+    <meta
+      property="og:description"
+      content="Web applications, management systems and dashboards built with JavaScript, React and Supabase."
+    />
+    <meta property="og:image" content="https://jkosencha.github.io/images/pic5.jpg" />
+    <meta name="twitter:card" content="summary" />
     <link rel="stylesheet" href="style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Outfit:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap"
-      rel="stylesheet"
-    />
     <script
       src="https://kit.fontawesome.com/e13d111ddf.js"
       crossorigin="anonymous"
@@ -23,118 +29,143 @@
   <body>
     <!-- NAVBAR -->
     <nav id="navbar">
-      <a href="#header"
-        ><img src="images/logo.png" class="logo" alt="JKosencha logo"
-      /></a>
+      <a href="#header" class="brand" aria-label="Jennifer Kosencha, home">
+        <i class="fa-solid fa-code brand-mark"></i>
+        <span>J</span><span>Kosencha</span>
+      </a>
       <ul id="sidemenu">
         <li><a href="#header" onclick="closemenu()">Home</a></li>
         <li><a href="#about" onclick="closemenu()">About</a></li>
         <li><a href="#services" onclick="closemenu()">Services</a></li>
-        <li><a href="#portfolio" onclick="closemenu()">Portfolio</a></li>
+        <li><a href="#skills" onclick="closemenu()">Skills</a></li>
+        <li><a href="#portfolio" onclick="closemenu()">Projects</a></li>
         <li><a href="#contact" onclick="closemenu()">Contact</a></li>
       </ul>
-      <div class="menu-toggle" id="menuToggle" onclick="togglemenu()">
+      <a href="#contact" class="btn btn-sm nav-cta"
+        >Let's Talk <i class="fa-solid fa-arrow-right"></i
+      ></a>
+      <button
+        type="button"
+        class="menu-toggle"
+        id="menuToggle"
+        onclick="togglemenu()"
+        aria-label="Toggle menu"
+      >
         <i class="fa-solid fa-bars" id="iconBars"></i>
         <i class="fa-solid fa-xmark" id="iconX"></i>
-      </div>
+      </button>
     </nav>
 
     <!-- HERO -->
     <section id="header">
       <div class="hero-bg"></div>
-      <div class="hero-orb"></div>
-      <div class="container">
+      <div class="container hero-grid">
         <div class="hero-content">
-          <p class="hero-eyebrow">Hello!</p>
-          <h1 class="hero-name">I'm JK<span>osen</span>cha</h1>
-          <div class="hero-roles">
-            <strong>Software Developer</strong><br />
-            Building scalable web apps, Android apps & digital systems.
-          </div>
+          <h1 class="hero-title">
+            Hi there, I'm <span>Jennifer Kosencha</span>, a Software
+            Developer.
+          </h1>
+          <p class="hero-text">
+            I build complete systems for real organisations: the public
+            website, and the dashboards, databases and business logic behind
+            it. From a children's home in Narok to a minimart's till, I make
+            software that's fast, works on any device and keeps running when
+            the connection drops.
+          </p>
           <div class="hero-cta">
-            <a href="#portfolio" class="btn btn2">View My Work</a>
-            <a href="#contact" class="btn">Get in Touch</a>
+            <a href="#portfolio" class="btn btn2"
+              >View My Work <i class="fa-solid fa-arrow-right"></i
+            ></a>
+            <a
+              href="images/Jennifer_Kosencha_Software_Developer_CV.pdf"
+              download
+              class="btn"
+              >Download CV <i class="fa-solid fa-download"></i
+            ></a>
+          </div>
+          <a href="#about" class="hero-scroll"
+            ><span class="mouse"></span> Scroll down</a
+          >
+        </div>
+
+        <div class="hero-visual">
+          <div class="hero-orbit"></div>
+          <div class="hero-ring">
+            <img src="images/pic5.jpg" alt="Jennifer Kosencha avatar" />
+          </div>
+          <div class="code-card" aria-hidden="true">
+            <div class="status"><span class="dot"></span> Open to work</div>
+<pre><span class="k">const</span> developer = {
+  name: <span class="s">"Jennifer Kosencha"</span>,
+  role: <span class="s">"Software Developer"</span>,
+  builds: <span class="s">"systems that work"</span>,
+<span class="p">}</span>;</pre>
+            <div class="run">&gt; letsBuildSomething();</div>
           </div>
         </div>
       </div>
-      <div class="hero-scroll">Scroll</div>
     </section>
 
     <!-- ABOUT -->
-    <section id="about">
-      <div class="container">
-        <div class="row">
-          <!-- Photo -->
-          <div class="about-col-1">
-            <div class="about-img-wrap">
-              <img src="images/pic5.jpg" alt="Jennifer Kosencha" />
-            </div>
+    <section id="about" class="section">
+      <div class="container about-grid">
+        <div class="journey">
+          <div class="journey-badge">
+            <b>2 yrs</b><small>supporting live systems</small>
           </div>
+          <h3>Experience</h3>
+          <ul class="timeline">
+            <li>
+              <strong>IPTV &amp; Software Support</strong>
+              <span>HSC Systems Limited</span> <em>2024 – 2026</em>
+            </li>
+            <li>
+              <strong>IT Consultant</strong>
+              <span>Namelok Naretoi Home</span> <em>Volunteer</em>
+            </li>
+          </ul>
+          <h3>Education</h3>
+          <ul class="timeline">
+            <li>
+              <strong>Software Engineering (Full-stack)</strong>
+              <span>Moringa School</span> <em>2026</em>
+            </li>
+            <li>
+              <strong>BSc Software Development</strong>
+              <span>KCA University</span> <em>2024</em>
+            </li>
+            <li>
+              <strong>Android Development</strong>
+              <span>eMobilis</span> <em>2023</em>
+            </li>
+          </ul>
+        </div>
 
-          <div class="about-col-2">
-            <span class="section-tag">Who I Am</span>
-            <h2 class="sub-title">About Me</h2>
-            <p>
-              I'm a self-driven Software Developer with a passion for building
-              responsive and scalable websites, web applications, and Android
-              apps that delight end-users. I've also supported and maintained
-              production systems in real commercial environments - which gave me
-              a ground-level understanding of how software performs under
-              pressure, and made me a sharper builder.
-            </p>
-
-            <div class="tab-titles">
-              <p
-                class="tab-links active-link"
-                onclick="opentab('skills', event)"
-              >
-                Skills
-              </p>
-              <p class="tab-links" onclick="opentab('experience', event)">
-                Achievements
-              </p>
-              <p class="tab-links" onclick="opentab('education', event)">CV</p>
+        <div class="about-text">
+          <span class="section-tag">About Me</span>
+          <h2 class="sub-title">
+            Software Developer<br /><span>Focused on Systems That Work</span>
+          </h2>
+          <p>
+            I have a BSc in Software Development and full-stack training from
+            Moringa School. I build complete systems: the public website, and
+            the dashboards, databases and business logic behind it. Before that
+            I spent two years in IPTV and software support at HSC Systems,
+            keeping live systems running for customers. That's why I design for
+            the real world: slow connections, offline days and busy users.
+          </p>
+          <div class="stats">
+            <div class="stat">
+              <i class="fa-solid fa-rocket"></i>
+              <div><b>4</b><small>Live client systems</small></div>
             </div>
-
-            <div class="tab-contents active-tab" id="skills">
-              <ul>
-                <li>
-                  <span>Software Systems</span>Designing web applications and
-                  software systems
-                </li>
-                <li>
-                  <span>Web Design & Dev</span>End-to-end website design and
-                  development
-                </li>
-                <li>
-                  <span>Android Development</span>Android applications built
-                  with Kotlin & Firebase
-                </li>
-                <li>
-                  <span>Production Systems</span>Supporting and maintaining
-                  real-world systems at scale
-                </li>
-              </ul>
+            <div class="stat">
+              <i class="fa-solid fa-users"></i>
+              <div><b>5</b><small>Developers led on ANIKA</small></div>
             </div>
-            <div class="tab-contents" id="experience">
-              <ul>
-                <li><span>Degree</span>Software Development</li>
-                <li><span>Certificate</span>Web Design & Development</li>
-                <li><span>Certificate</span>Android Application Development</li>
-                <li>
-                  <span>Work Experience</span>Production systems support &
-                  maintenance
-                </li>
-              </ul>
-            </div>
-            <div class="tab-contents" id="education">
-              <a
-                href="images/Jennifer Kosencha-Software-IPTV-Eng-CV.pdf"
-                download
-                class="btn btn2"
-              >
-                <i class="fa-solid fa-download"></i> Download CV
-              </a>
+            <div class="stat">
+              <i class="fa-solid fa-server"></i>
+              <div><b>2 yrs</b><small>Production support</small></div>
             </div>
           </div>
         </div>
@@ -142,211 +173,357 @@
     </section>
 
     <!-- SERVICES -->
-    <section id="services">
+    <section id="services" class="section section-alt">
       <div class="container">
-        <div class="services-header">
+        <div class="section-head">
           <div>
-            <span class="section-tag">What I Do</span>
-            <h2 class="sub-title">Services</h2>
+            <span class="section-tag">Services</span>
+            <h2 class="sub-title">What I Can Do For You</h2>
           </div>
-          <p>
-            Tailored digital solutions across web, mobile and systems
-            development.
-          </p>
         </div>
-
-        <div class="services-list">
-          <div>
-            <i class="fa-solid fa-code"></i>
-            <h2>Web Dev</h2>
+        <div class="services-grid">
+          <article class="service">
+            <div class="icon-box"><i class="fa-solid fa-code"></i></div>
+            <h3>Web Development</h3>
             <p>
-              Crafting responsive websites that provide engaging user
-              experiences and functionality.
+              Fast, scalable websites and web applications built with React
+              and modern JavaScript.
             </p>
-            <a href="web.html"
-              >Read more</a>
-          </div>
-          <div>
-            <i class="fa-solid fa-server"></i>
-            <h2>System Dev</h2>
+            <a href="miamai.html" class="arrow" aria-label="See a web project"
+              ><i class="fa-solid fa-arrow-right"></i
+            ></a>
+          </article>
+          <article class="service">
+            <div class="icon-box"><i class="fa-solid fa-chart-line"></i></div>
+            <h3>Management Systems &amp; Dashboards</h3>
             <p>
-              Creating custom software solutions to enhance business processes
-              and efficiency.
+              Custom systems for records, inventory, sales, donations and
+              reports, with role-based access.
             </p>
-            <a href="systemapp.html"
-              >Read more</a>
-          </div>
-          <div>
-            <i class="fa-brands fa-android"></i>
-            <h2>Android Dev</h2>
+            <a href="namelok.html" class="arrow" aria-label="See a management system"
+              ><i class="fa-solid fa-arrow-right"></i
+            ></a>
+          </article>
+          <article class="service">
+            <div class="icon-box"><i class="fa-solid fa-database"></i></div>
+            <h3>Backend Development</h3>
             <p>
-              Developing user-friendly mobile applications for Android using
-              Kotlin and Firebase.
+              Secure, reliable APIs, databases and business logic with
+              Supabase, PostgreSQL, Flask and Express.
             </p>
-            <a href="android.html"
-              >Read more</a>
-          </div>
+            <a href="savannah-pos.html" class="arrow" aria-label="See a backend project"
+              ><i class="fa-solid fa-arrow-right"></i
+            ></a>
+          </article>
+          <article class="service">
+            <div class="icon-box"><i class="fa-solid fa-mobile-screen"></i></div>
+            <h3>Responsive Design</h3>
+            <p>
+              Mobile-first interfaces that look sharp and stay usable on every
+              screen, from phones to the shop counter.
+            </p>
+            <a href="anika.html" class="arrow" aria-label="See a responsive project"
+              ><i class="fa-solid fa-arrow-right"></i
+            ></a>
+          </article>
+          <article class="service">
+            <div class="icon-box"><i class="fa-solid fa-gauge-high"></i></div>
+            <h3>Performance Optimization</h3>
+            <p>
+              Faster load times, lighter images, offline support and better SEO
+              so people stay on your site.
+            </p>
+            <a href="#contact" class="arrow" aria-label="Ask about performance work"
+              ><i class="fa-solid fa-arrow-right"></i
+            ></a>
+          </article>
+          <article class="service">
+            <div class="icon-box"><i class="fa-brands fa-android"></i></div>
+            <h3>Android Apps</h3>
+            <p>
+              Native Android applications with Kotlin and Firebase, from
+              shopping apps to business tools.
+            </p>
+            <a href="OnlineLA.html" class="arrow" aria-label="See an Android project"
+              ><i class="fa-solid fa-arrow-right"></i
+            ></a>
+          </article>
         </div>
       </div>
     </section>
 
-    <!-- PORTFOLIO -->
-    <section id="portfolio">
+    <!-- TECH STACK -->
+    <section id="skills" class="section">
       <div class="container">
-        <div class="portfolio-header">
+        <div class="section-head">
           <div>
-            <span class="section-tag">Selected Work</span>
-            <h2 class="sub-title">My Work</h2>
+            <span class="section-tag">My Tech Stack</span>
+            <h2 class="sub-title">Technologies I Work With</h2>
           </div>
-          <a href="portfolio.html" class="btn">See All Projects</a>
+        </div>
+        <div class="tech-panel">
+          <div class="tech"><img loading="lazy" src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/html5/html5-original.svg" alt="" />HTML5</div>
+          <div class="tech"><img loading="lazy" src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/css3/css3-original.svg" alt="" />CSS3</div>
+          <div class="tech"><img loading="lazy" src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/javascript/javascript-original.svg" alt="" />JavaScript</div>
+          <div class="tech"><img loading="lazy" src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/typescript/typescript-original.svg" alt="" />TypeScript</div>
+          <div class="tech"><img loading="lazy" src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/react/react-original.svg" alt="" />React</div>
+          <div class="tech"><img loading="lazy" src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/vitejs/vitejs-original.svg" alt="" />Vite</div>
+          <div class="tech"><img loading="lazy" src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/tailwindcss/tailwindcss-original.svg" alt="" />Tailwind CSS</div>
+          <div class="tech"><img loading="lazy" src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/nodejs/nodejs-original.svg" alt="" />Node.js</div>
+          <div class="tech"><img loading="lazy" class="mono-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/express/express-original.svg" alt="" />Express</div>
+          <div class="tech"><img loading="lazy" src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/python/python-original.svg" alt="" />Python</div>
+          <div class="tech"><img loading="lazy" class="mono-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/flask/flask-original.svg" alt="" />Flask</div>
+          <div class="tech"><img loading="lazy" class="mono-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/django/django-plain.svg" alt="" />Django</div>
+          <div class="tech"><img loading="lazy" src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/postgresql/postgresql-original.svg" alt="" />PostgreSQL</div>
+          <div class="tech"><img loading="lazy" src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/supabase/supabase-original.svg" alt="" />Supabase</div>
+          <div class="tech"><img loading="lazy" src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/mongodb/mongodb-original.svg" alt="" />MongoDB</div>
+          <div class="tech"><img loading="lazy" src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/firebase/firebase-original.svg" alt="" />Firebase</div>
+          <div class="tech"><img loading="lazy" src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/kotlin/kotlin-original.svg" alt="" />Kotlin</div>
+          <div class="tech"><img loading="lazy" src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/git/git-original.svg" alt="" />Git</div>
+          <div class="tech"><img loading="lazy" class="mono-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/github/github-original.svg" alt="" />GitHub</div>
+          <div class="tech"><img loading="lazy" src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/docker/docker-original.svg" alt="" />Docker</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="portfolio" class="section section-alt">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <span class="section-tag">Featured Projects</span>
+            <h2 class="sub-title">Selected Work</h2>
+          </div>
+          <a href="portfolio.html" class="btn btn-sm"
+            >View All Projects <i class="fa-solid fa-arrow-right"></i
+          ></a>
         </div>
 
-        <div class="work-list">
-          <div class="work">
-            <img src="images/pic6.jpg" alt="Namelok Naretoi Website" />
-            <div class="layer">
-              <h3>Namelok Naretoi</h3>
-              <p>Website for a CBO organisation.</p>
-              <a href="https://NamelokNaretoi.github.io" target="_blank"
-                >View Live <i class="fa-solid fa-arrow-up-right-from-square"></i
-              ></a>
+        <div class="project-list">
+          <article class="project-card">
+            <a href="namelok.html" class="thumb">
+              <img loading="lazy" src="images/projects/namelok-dashboard-dark.webp" alt="Namelok Naretoi admin dashboard" />
+              <span class="pill"># Management System</span>
+            </a>
+            <div class="project-body">
+              <span class="project-meta">Full-stack · Solo · Live</span>
+              <h3>Namelok Naretoi: Website &amp; Management System</h3>
+              <p>
+                Public website and admin dashboard for a children's home in
+                Narok: children, donors, donations, expenses, volunteers and
+                outreach in one place.
+              </p>
+              <ul class="tags">
+                <li>React</li><li>TypeScript</li><li>Supabase</li><li>PostgreSQL</li>
+              </ul>
+              <div class="project-links">
+                <a href="https://namelok-naretoi-home.netlify.app/" target="_blank" rel="noopener"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live</a>
+                <a href="https://github.com/Jkosencha/Namelok-Naretoi-Home" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> Code</a>
+                <a href="namelok.html" class="go" aria-label="Read the Namelok case study"><i class="fa-solid fa-arrow-right"></i></a>
+              </div>
             </div>
-            <div class="work-label">
-              <h4>Namelok Naretoi Website</h4>
-              <span>Web Development</span>
-            </div>
-          </div>
+          </article>
 
-          <div class="work">
-            <img src="images/h01.png" alt="Hospital Management System" />
-            <div class="layer">
-              <h3>Hospital Management</h3>
-              <p>Full online hospital management system.</p>
-              <a href="HospitalMS.html"
-                >View Project
-                <i class="fa-solid fa-arrow-up-right-from-square"></i
-              ></a>
+          <article class="project-card">
+            <a href="savannah-pos.html" class="thumb">
+              <img loading="lazy" src="images/projects/savannah-dashboard-dark.webp" alt="Savannah Minimart POS dashboard" />
+              <span class="pill"># Point of Sale</span>
+            </a>
+            <div class="project-body">
+              <span class="project-meta">Full-stack · Solo · Live</span>
+              <h3>Savannah Minimart POS</h3>
+              <p>
+                Point-of-sale system for a Kenyan minimart: register, inventory,
+                M-Pesa, offline sales, thermal receipts and role-based access.
+              </p>
+              <ul class="tags">
+                <li>React</li><li>Supabase</li><li>PostgreSQL</li><li>PWA</li><li>Node.js</li>
+              </ul>
+              <div class="project-links">
+                <a href="https://github.com/Jkosencha/POS-management-software" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> Code</a>
+                <a href="savannah-pos.html" class="go" aria-label="Read the Savannah POS case study"><i class="fa-solid fa-arrow-right"></i></a>
+              </div>
             </div>
-            <div class="work-label">
-              <h4>Hospital Management System</h4>
-              <span>System Development</span>
-            </div>
-          </div>
+          </article>
 
-          <div class="work">
-            <img src="images/l01.jpg" alt="Online Shopping App" />
-            <div class="layer">
-              <h3>Leatherly Shopping App</h3>
-              <p>Ecommerce Android application.</p>
-              <a href="OnlineLA.html"
-                >View Project
-                <i class="fa-solid fa-arrow-up-right-from-square"></i
-              ></a>
+          <article class="project-card">
+            <a href="anika.html" class="thumb">
+              <img loading="lazy" src="images/projects/anika-site.webp" alt="ANIKA Initiative website" />
+              <span class="pill"># Nonprofit Platform</span>
+            </a>
+            <div class="project-body">
+              <span class="project-meta">Full-stack · Team lead (5) · Live</span>
+              <h3>ANIKA Initiative: Website &amp; Admin Desk</h3>
+              <p>
+                Moringa capstone for a Pan-African arts nonprofit: public site,
+                role-based admin dashboard and a WhatsApp assistant.
+              </p>
+              <ul class="tags">
+                <li>React</li><li>Tailwind CSS</li><li>Flask</li><li>SQLAlchemy</li>
+              </ul>
+              <div class="project-links">
+                <a href="https://anikainitiative.com/" target="_blank" rel="noopener"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live</a>
+                <a href="https://github.com/Jkosencha/Anika-Initiative" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> Code</a>
+                <a href="anika.html" class="go" aria-label="Read the ANIKA case study"><i class="fa-solid fa-arrow-right"></i></a>
+              </div>
             </div>
-            <div class="work-label">
-              <h4>Online Shopping App</h4>
-              <span>Android Development</span>
+          </article>
+
+          <article class="project-card">
+            <a href="miamai.html" class="thumb">
+              <img loading="lazy" src="images/projects/miamai-site.webp" alt="Mia Mai Limited website" />
+              <span class="pill"># Company Website</span>
+            </a>
+            <div class="project-body">
+              <span class="project-meta">Frontend · Solo · Live</span>
+              <h3>Mia Mai Limited</h3>
+              <p>
+                Responsive company website for a procurement and supply
+                business, built to showcase products and bring in quote
+                requests.
+              </p>
+              <ul class="tags">
+                <li>HTML</li><li>CSS</li><li>JavaScript</li><li>Netlify</li>
+              </ul>
+              <div class="project-links">
+                <a href="https://miamailimited.netlify.app/" target="_blank" rel="noopener"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live</a>
+                <a href="https://github.com/Jkosencha/MIA-MAI_portfolio_website" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> Code</a>
+                <a href="miamai.html" class="go" aria-label="Read the Mia Mai case study"><i class="fa-solid fa-arrow-right"></i></a>
+              </div>
             </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- BUILT FOR (real clients) -->
+    <section id="clients" class="section">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <span class="section-tag">Built For</span>
+            <h2 class="sub-title">Organisations I've Built For</h2>
           </div>
+        </div>
+        <div class="clients">
+          <a href="namelok.html" class="client"
+            ><b>Namelok Naretoi Home</b><small>Children's home · Narok</small></a
+          >
+          <a href="anika.html" class="client"
+            ><b>ANIKA Initiative</b><small>Arts nonprofit · 5 countries</small></a
+          >
+          <a href="savannah-pos.html" class="client"
+            ><b>Savannah Minimart</b><small>Retail · Kenya</small></a
+          >
+          <a href="miamai.html" class="client"
+            ><b>Mia Mai Limited</b><small>Procurement &amp; supply</small></a
+          >
         </div>
       </div>
     </section>
 
     <!-- CONTACT -->
-    <section id="contact">
-      <div class="container">
-        <div class="contact-row">
-          <!-- Left info -->
-          <div class="contact-left">
-            <span class="section-tag">Say Hello</span>
-            <h2 class="sub-title">Contact<br />Me</h2>
-            <div class="contact-detail">
-              <i class="fa-solid fa-envelope"></i>
-              <span>jenniferkosencha@gmail.com</span>
+    <section id="contact" class="section section-alt">
+      <div class="container contact-grid">
+        <div class="contact-left">
+          <span class="section-tag">Get In Touch</span>
+          <h2 class="sub-title">
+            Let's Build Something<br /><span>Useful Together.</span>
+          </h2>
+          <p>
+            I'm open to full-time developer roles and freelance projects. Tell
+            me what you need and I'll get back to you.
+          </p>
+          <div class="contact-items">
+            <a href="mailto:jenniferkosencha@gmail.com" class="contact-item">
+              <div class="icon-box"><i class="fa-solid fa-envelope"></i></div>
+              <div><small>Email</small><span>jenniferkosencha@gmail.com</span></div>
+            </a>
+            <a
+              href="https://www.linkedin.com/in/jennifer-kosencha-59730325b"
+              target="_blank"
+              rel="noopener"
+              class="contact-item"
+            >
+              <div class="icon-box"><i class="fa-brands fa-linkedin-in"></i></div>
+              <div><small>LinkedIn</small><span>jennifer-kosencha</span></div>
+            </a>
+            <div class="contact-item">
+              <div class="icon-box"><i class="fa-solid fa-location-dot"></i></div>
+              <div><small>Location</small><span>Nairobi, Kenya</span></div>
             </div>
-            <div class="contact-detail">
-              <i class="fa-solid fa-phone"></i>
-              <span>0704 239 554</span>
-            </div>
-            <div class="social-icons">
-              <a href="https://twitter.com/JKosencha" aria-label="Twitter"
-                ><i class="fa-brands fa-x-twitter"></i
-              ></a>
-              <a
-                href="https://www.instagram.com/j_kosencha/"
-                aria-label="Instagram"
-                ><i class="fa-brands fa-instagram"></i
-              ></a>
-              <a href="" aria-label="LinkedIn"
-                ><i class="fa-brands fa-linkedin-in"></i
-              ></a>
-            </div>
-          </div>
-
-          <div class="contact-right">
-            <form id="submit-form">
-              <input
-                type="text"
-                id="userName"
-                name="userName"
-                placeholder="Your Name"
-                required
-                autocomplete="name"
-              />
-              <input
-                type="email"
-                id="emailFrom"
-                name="emailFrom"
-                placeholder="Your Email"
-                required
-                autocomplete="email"
-              />
-              <input
-                type="tel"
-                id="phoneNumber"
-                name="phoneNumber"
-                placeholder="Your Phone Number"
-                autocomplete="tel"
-              />
-              <textarea
-                name="message"
-                id="message"
-                rows="6"
-                placeholder="Your Message"
-              ></textarea>
-              <button type="submit" class="btn btn2">
-                <i class="fa-solid fa-paper-plane"></i> Send Message
-              </button>
-            </form>
-            <span id="msg"></span>
           </div>
         </div>
-      </div>
 
-      <div class="copyright">
-        <p>
-          © 2024 JKOSENCHA &nbsp;·&nbsp; Built with
-          <i class="fa-solid fa-heart"></i> &nbsp;·&nbsp;
-          jenniferkosencha@gmail.com
-        </p>
+        <form id="submit-form" class="contact-form">
+          <input
+            type="text"
+            id="userName"
+            name="userName"
+            placeholder="Your Name"
+            required
+            autocomplete="name"
+          />
+          <input
+            type="email"
+            id="emailFrom"
+            name="emailFrom"
+            placeholder="Your Email"
+            required
+            autocomplete="email"
+          />
+          <input
+            class="full"
+            type="text"
+            id="subject"
+            name="subject"
+            placeholder="Subject"
+          />
+          <textarea
+            class="full"
+            name="message"
+            id="message"
+            rows="6"
+            placeholder="Your Message"
+            required
+          ></textarea>
+          <button type="submit" class="btn btn2 full">
+            Send Message <i class="fa-solid fa-paper-plane"></i>
+          </button>
+          <span id="msg" class="full"></span>
+        </form>
       </div>
     </section>
 
+    <footer>
+      <div class="container footer-row">
+        <a href="#header" class="brand">
+          <i class="fa-solid fa-code brand-mark"></i>
+          <span>J</span><span>Kosencha</span>
+        </a>
+        <p>© <span id="year">2026</span> Jennifer Kosencha. All rights reserved.</p>
+        <div class="social-icons">
+          <a href="https://github.com/Jkosencha" target="_blank" rel="noopener" aria-label="GitHub"
+            ><i class="fa-brands fa-github"></i
+          ></a>
+          <a
+            href="https://www.linkedin.com/in/jennifer-kosencha-59730325b"
+            target="_blank"
+            rel="noopener"
+            aria-label="LinkedIn"
+            ><i class="fa-brands fa-linkedin-in"></i
+          ></a>
+          <a href="https://twitter.com/JKosencha" target="_blank" rel="noopener" aria-label="X (Twitter)"
+            ><i class="fa-brands fa-x-twitter"></i
+          ></a>
+        </div>
+      </div>
+    </footer>
+
     <script>
-      // ── Tab switching ──
-      function opentab(tabname, event) {
-        document
-          .querySelectorAll(".tab-links")
-          .forEach((el) => el.classList.remove("active-link"));
-        document
-          .querySelectorAll(".tab-contents")
-          .forEach((el) => el.classList.remove("active-tab"));
-        if (event) event.currentTarget.classList.add("active-link");
-        document.getElementById(tabname).classList.add("active-tab");
-      }
+      document.getElementById("year").textContent = new Date().getFullYear();
 
       // ── Mobile menu ──
-
       function togglemenu() {
         const menu = document.getElementById("sidemenu");
         const isOpen = menu.style.right === "0px";
@@ -360,11 +537,11 @@
         document.getElementById("iconX").style.transform = "rotate(0deg)";
       }
       function closemenu() {
-        document.getElementById("sidemenu").style.right = "-100%";
-        document.getElementById("iconBars").style.opacity = "1";
-        document.getElementById("iconBars").style.transform = "rotate(0deg)";
-        document.getElementById("iconX").style.opacity = "0";
-        document.getElementById("iconX").style.transform = "rotate(-90deg)";
+        document.getElementById("sidemenu").style.right = "";
+        document.getElementById("iconBars").style.opacity = "";
+        document.getElementById("iconBars").style.transform = "";
+        document.getElementById("iconX").style.opacity = "";
+        document.getElementById("iconX").style.transform = "";
       }
 
       document.addEventListener("click", function (e) {
@@ -379,12 +556,29 @@
         }
       });
 
-      // ── Nav scroll style ──
+      // ── Nav: background on scroll + highlight the current section ──
+      const nav = document.getElementById("navbar");
       window.addEventListener("scroll", () => {
-        const nav = document.getElementById("navbar");
-        nav.style.background =
-          window.scrollY > 60 ? "rgba(8,13,26,0.97)" : "rgba(8,13,26,0.88)";
+        nav.classList.toggle("scrolled", window.scrollY > 60);
       });
+      const navLinks = document.querySelectorAll("#sidemenu a");
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (!entry.isIntersecting) return;
+            navLinks.forEach((a) =>
+              a.classList.toggle(
+                "active",
+                a.getAttribute("href") === "#" + entry.target.id,
+              ),
+            );
+          });
+        },
+        { rootMargin: "-45% 0px -50% 0px" },
+      );
+      ["header", "about", "services", "skills", "portfolio", "contact"].forEach(
+        (id) => observer.observe(document.getElementById(id)),
+      );
 
       // ── Contact form — opens default mail client ──
       document
@@ -393,24 +587,16 @@
           e.preventDefault();
           const name = document.getElementById("userName").value.trim();
           const email = document.getElementById("emailFrom").value.trim();
-          const phone = document.getElementById("phoneNumber").value.trim();
+          const subject =
+            document.getElementById("subject").value.trim() ||
+            "Portfolio Enquiry from " + name;
           const message = document.getElementById("message").value.trim();
-          const subject = encodeURIComponent("Portfolio Enquiry from " + name);
           const body = encodeURIComponent(
-            "Name: " +
-              name +
-              "\n" +
-              "Email: " +
-              email +
-              "\n" +
-              "Phone: " +
-              phone +
-              "\n\n" +
-              message,
+            "Name: " + name + "\n" + "Email: " + email + "\n\n" + message,
           );
           window.location.href =
             "mailto:jenniferkosencha@gmail.com?subject=" +
-            subject +
+            encodeURIComponent(subject) +
             "&body=" +
             body;
           document.getElementById("msg").textContent = "Opening your mail app…";
