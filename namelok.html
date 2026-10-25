@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Case study: a public website and Supabase-backed management system for Namelok Naretoi Home, built by Jennifer Kosencha.">
+    <link rel="icon" type="image/png" href="images/logo.png">
+    <title>Namelok Naretoi Case Study - Jennifer Kosencha</title>
+    <link rel="stylesheet" href="infopages.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Azeret+Mono:wght@400;500;700&family=Schibsted+Grotesk:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/e13d111ddf.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <nav class="top-nav">
+        <a href="index.html#portfolio" class="back-link"><i class="fa-solid fa-arrow-left"></i> Projects</a>
+        <span class="nav-label">Case Study / Namelok Naretoi</span>
+    </nav>
+
+    <main class="page-wrapper">
+        <header class="page-hero">
+            <span class="tag">Full-stack · Solo project</span>
+            <h1>Namelok Naretoi<br>Website &amp; Management System</h1>
+            <p>A public website and an admin system for a children's home in Narok, Kenya, that has supported disabled children and girls rescued from FGM and early marriage since 1991.</p>
+            <div class="case-links">
+                <a href="https://namelok-naretoi-home.netlify.app/" target="_blank" rel="noopener"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live website</a>
+                <a href="https://github.com/Jkosencha/Namelok-Naretoi-Home" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> Source code</a>
+            </div>
+        </header>
+
+        <dl class="facts">
+            <div><dt>My role</dt><dd>Sole developer: design, build, database, deployment</dd></div>
+            <div><dt>Client</dt><dd>Namelok Naretoi Home, Narok</dd></div>
+            <div><dt>Status</dt><dd>Live</dd></div>
+        </dl>
+
+        <section class="info-section">
+            <h2>The Problem</h2>
+            <p class="intro-text">The home needed two things: a website that tells its story and makes it easy to give, and one place for staff to keep track of the children in their care, donors and donations, expenses, volunteers and school outreach. The website content also had to be editable by staff without touching code.</p>
+        </section>
+
+        <section class="info-section">
+            <h2>What I Built</h2>
+            <ul class="feature-list">
+                <li><strong>Public website:</strong> home, about, stories, gallery, donate and contact pages, with a shared navbar, footer and contact section built as reusable JavaScript components.</li>
+                <li><strong>Admin dashboard:</strong> children (categories, classes, photos, "moved on" status), donations, donors and donor funds, expenses, messages, volunteers, school visits, items handed out, a shared calendar and reports.</li>
+                <li><strong>Website editor:</strong> staff manage stories, the gallery and the site's headline stats from the dashboard, and the public site reads them from the database.</li>
+            </ul>
+        </section>
+
+        <section class="info-section">
+            <h2>Technical Decisions</h2>
+            <ul class="feature-list">
+                <li><strong>One Supabase backend for both apps.</strong> The website and the dashboard read the same connection config and PostgreSQL database, so content edited in the dashboard shows up on the site straight away.</li>
+                <li><strong>Versioned database changes.</strong> The schema lives in the repo, and every change since is a dated SQL file (reports, calendar, child photos, donor funds…), so the database can be rebuilt or audited step by step.</li>
+                <li><strong>Static hosting, no server to maintain.</strong> The dashboard is a React + TypeScript app built with Vite into <code>/admin</code>, so a single Netlify site serves the website and the dashboard.</li>
+                <li><strong>Privacy by default.</strong> Records about children are sensitive, so the screenshots shown here use invented sample data, never real records.</li>
+            </ul>
+        </section>
+
+        <section class="info-section">
+            <h2>Tech Stack</h2>
+            <div class="skills-list">
+                <span class="skill-pill">React</span>
+                <span class="skill-pill">TypeScript</span>
+                <span class="skill-pill">Vite</span>
+                <span class="skill-pill">Tailwind CSS</span>
+                <span class="skill-pill">shadcn/ui</span>
+                <span class="skill-pill">Recharts</span>
+                <span class="skill-pill">Supabase</span>
+                <span class="skill-pill">PostgreSQL</span>
+                <span class="skill-pill">HTML / CSS / JavaScript</span>
+                <span class="skill-pill">Netlify</span>
+            </div>
+        </section>
+
+        <section class="info-section">
+            <h2>The Website</h2>
+            <figure class="shot">
+                <img loading="lazy" src="images/projects/namelok-site.webp" alt="Namelok Naretoi Home public website homepage">
+                <figcaption><a href="https://namelok-naretoi-home.netlify.app/" target="_blank" rel="noopener">Visit the website <i class="fa-solid fa-arrow-up-right-from-square"></i></a></figcaption>
+            </figure>
+        </section>
+
+        <section class="info-section">
+            <h2>The Dashboard</h2>
+            <div class="mode-pair">
+                <figure class="shot">
+                    <img loading="lazy" src="images/projects/namelok-dashboard-light.webp" alt="Namelok admin dashboard with children in care, donations chart and calendar, light mode">
+                    <figcaption><i class="fa-solid fa-sun"></i> Light mode</figcaption>
+                </figure>
+                <figure class="shot">
+                    <img loading="lazy" src="images/projects/namelok-dashboard-dark.webp" alt="Namelok admin dashboard with children in care, donations chart and calendar, dark mode">
+                    <figcaption><i class="fa-solid fa-moon"></i> Dark mode</figcaption>
+                </figure>
+            </div>
+            <p class="shot-note">Sample data. Click a screenshot to enlarge it.</p>
+        </section>
+
+        <div class="contact-footer">
+            <div class="cta-text">
+                <h3>Want to talk about this project?</h3>
+                <p>I'm happy to walk through the code and the decisions behind it.</p>
+            </div>
+            <a href="mailto:jenniferkosencha@gmail.com" class="cta-btn">
+                <i class="fa-solid fa-paper-plane"></i> Get in Touch
+            </a>
+        </div>
+    </main>
+
+    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+        <button class="lightbox-close" onclick="closeLightbox()">×</button>
+        <img id="lightbox-img" src="" alt="">
+    </div>
+
+    <script>
+        document.querySelectorAll('.shot img').forEach(img => img.addEventListener('click', () => {
+            document.getElementById('lightbox-img').src = img.src;
+            document.getElementById('lightbox').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }));
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+        document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
+    </script>
+</body>
+</html>

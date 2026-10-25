@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Case study: Savannah Minimart POS, an offline-capable point-of-sale system with M-Pesa, inventory and role-based access, built by Jennifer Kosencha.">
+    <link rel="icon" type="image/png" href="images/logo.png">
+    <title>Savannah Minimart POS Case Study - Jennifer Kosencha</title>
+    <link rel="stylesheet" href="infopages.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Azeret+Mono:wght@400;500;700&family=Schibsted+Grotesk:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/e13d111ddf.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <nav class="top-nav">
+        <a href="index.html#portfolio" class="back-link"><i class="fa-solid fa-arrow-left"></i> Projects</a>
+        <span class="nav-label">Case Study / Savannah Minimart POS</span>
+    </nav>
+
+    <main class="page-wrapper">
+        <header class="page-hero">
+            <span class="tag">Full-stack · Solo project</span>
+            <h1>Savannah Minimart<br>Point of Sale</h1>
+            <p>A cloud-backed point-of-sale system for a minimart in Kenya. It runs in the browser on any device, takes M-Pesa, keeps selling when the internet drops, and prints receipts on a thermal printer.</p>
+            <div class="case-links">
+                <a href="https://github.com/Jkosencha/POS-management-software" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> Source code</a>
+            </div>
+        </header>
+
+        <dl class="facts">
+            <div><dt>My role</dt><dd>Sole developer: database, backend, frontend, hardware</dd></div>
+            <div><dt>Client</dt><dd>Savannah Minimart, Kenya</dd></div>
+            <div><dt>Users</dt><dd>Owner, managers, cashiers</dd></div>
+        </dl>
+
+        <section class="info-section">
+            <h2>The Problem</h2>
+            <p class="intro-text">The shop tracked sales on paper. The owner had no live view of stock or takings, cashiers needed a fast till that works with a barcode scanner, and the internet in the shop isn't always reliable. Money and stock also had to add up exactly, for every cashier and every partner in the business.</p>
+        </section>
+
+        <section class="info-section">
+            <h2>What I Built</h2>
+            <ul class="feature-list">
+                <li><strong>Register:</strong> search or scan products (USB barcode scanner), discounts capped by role, VAT, and cash with change, M-Pesa (Pochi la Biashara) or card payments.</li>
+                <li><strong>Offline mode:</strong> sales queue on the device when the connection drops and sync automatically when it returns, credited to the cashier who rang them up.</li>
+                <li><strong>Receipts and cash drawer:</strong> 80mm thermal receipts print on every sale, and the cash drawer opens through a small local printer bridge.</li>
+                <li><strong>Inventory:</strong> products, categories and stock batches with low-stock alerts, restocks and an audit trail for every adjustment.</li>
+                <li><strong>Owner dashboard and reports:</strong> revenue against cost, sales by category, top products, close-of-day Z-reports, and partner profit splits with payouts.</li>
+                <li><strong>Staff and roles:</strong> owners, managers and cashiers each see only what they need. Cashiers get their own dashboard with no cost or profit figures.</li>
+            </ul>
+        </section>
+
+        <section class="info-section">
+            <h2>Technical Decisions</h2>
+            <ul class="feature-list">
+                <li><strong>Business rules live in the database.</strong> Checkout, void and un-void, FIFO stock allocation and partner reports are PostgreSQL functions, so totals and stock stay consistent whichever device rings up the sale.</li>
+                <li><strong>Permissions enforced by Row Level Security,</strong> not just by hiding buttons. Even if someone bypasses the interface, a cashier can't read profit figures or edit stock.</li>
+                <li><strong>Offline-first as an installable PWA.</strong> The app caches itself with Workbox and stores the product list and pending sales in IndexedDB, so the till keeps working without internet.</li>
+                <li><strong>A local bridge for hardware.</strong> Browsers can't talk to USB thermal printers directly, so a small Node.js server on the shop PC sends ESC/POS commands to the printer and cash drawer.</li>
+                <li><strong>Realtime updates.</strong> Supabase Realtime pushes new sales to every open dashboard, and staff invites go out through a Supabase Edge Function.</li>
+            </ul>
+        </section>
+
+        <section class="info-section">
+            <h2>Tech Stack</h2>
+            <div class="skills-list">
+                <span class="skill-pill">React 18</span>
+                <span class="skill-pill">Vite</span>
+                <span class="skill-pill">Tailwind CSS v4</span>
+                <span class="skill-pill">shadcn/ui · Radix</span>
+                <span class="skill-pill">Recharts</span>
+                <span class="skill-pill">PWA · Workbox</span>
+                <span class="skill-pill">IndexedDB</span>
+                <span class="skill-pill">Supabase</span>
+                <span class="skill-pill">PostgreSQL · PL/pgSQL</span>
+                <span class="skill-pill">Row Level Security</span>
+                <span class="skill-pill">Edge Functions (Deno)</span>
+                <span class="skill-pill">Node.js · ESC/POS</span>
+                <span class="skill-pill">Vercel</span>
+            </div>
+        </section>
+
+        <section class="info-section">
+            <h2>The Dashboard</h2>
+            <div class="mode-pair">
+                <figure class="shot">
+                    <img loading="lazy" src="images/projects/savannah-dashboard-light.webp" alt="Savannah Minimart owner dashboard with revenue vs cost, sales by category, payment and partner split, light mode">
+                    <figcaption><i class="fa-solid fa-sun"></i> Light mode</figcaption>
+                </figure>
+                <figure class="shot">
+                    <img loading="lazy" src="images/projects/savannah-dashboard-dark.webp" alt="Savannah Minimart owner dashboard with revenue vs cost, sales by category, payment and partner split, dark mode">
+                    <figcaption><i class="fa-solid fa-moon"></i> Dark mode</figcaption>
+                </figure>
+            </div>
+            <p class="shot-note">Owner view. Click a screenshot to enlarge it.</p>
+        </section>
+
+        <div class="contact-footer">
+            <div class="cta-text">
+                <h3>Want to talk about this project?</h3>
+                <p>I'm happy to walk through the code and the decisions behind it.</p>
+            </div>
+            <a href="mailto:jenniferkosencha@gmail.com" class="cta-btn">
+                <i class="fa-solid fa-paper-plane"></i> Get in Touch
+            </a>
+        </div>
+    </main>
+
+    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+        <button class="lightbox-close" onclick="closeLightbox()">×</button>
+        <img id="lightbox-img" src="" alt="">
+    </div>
+
+    <script>
+        document.querySelectorAll('.shot img').forEach(img => img.addEventListener('click', () => {
+            document.getElementById('lightbox-img').src = img.src;
+            document.getElementById('lightbox').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }));
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+        document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
+    </script>
+</body>
+</html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Case study: ANIKA Initiative website, admin dashboard and WhatsApp assistant, a Moringa School capstone led by Jennifer Kosencha.">
+    <link rel="icon" type="image/png" href="images/logo.png">
+    <title>ANIKA Initiative Case Study - Jennifer Kosencha</title>
+    <link rel="stylesheet" href="infopages.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Azeret+Mono:wght@400;500;700&family=Schibsted+Grotesk:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/e13d111ddf.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <nav class="top-nav">
+        <a href="index.html#portfolio" class="back-link"><i class="fa-solid fa-arrow-left"></i> Projects</a>
+        <span class="nav-label">Case Study / ANIKA Initiative</span>
+    </nav>
+
+    <main class="page-wrapper">
+        <header class="page-hero">
+            <span class="tag">Full-stack · Team lead of 5</span>
+            <h1>ANIKA Initiative<br>Website &amp; Admin Desk</h1>
+            <p>A digital platform for a Pan-African, art-based nonprofit: a public website, a role-based admin dashboard and a WhatsApp assistant. Built as our Moringa School capstone and handed over to the organisation.</p>
+            <div class="case-links">
+                <a href="https://anikainitiative.com/" target="_blank" rel="noopener"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live website</a>
+                <a href="https://github.com/Jkosencha/Anika-Initiative" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> Source code</a>
+            </div>
+        </header>
+
+        <dl class="facts">
+            <div><dt>My role</dt><dd>Team lead and frontend developer</dd></div>
+            <div><dt>Team</dt><dd>5 developers</dd></div>
+            <div><dt>Client</dt><dd>ANIKA Initiative, Nairobi</dd></div>
+        </dl>
+
+        <section class="info-section">
+            <h2>The Problem</h2>
+            <p class="intro-text">ANIKA works across five African countries using spoken word, theatre and visual art. It needed a home online where people can find events, register, read impact stories and give via M-Pesa, plus a back office where staff manage contacts, events, registrations, applications, partners and donations, and answer people on WhatsApp.</p>
+        </section>
+
+        <section class="info-section">
+            <h2>My Contribution</h2>
+            <ul class="feature-list">
+                <li><strong>Led a team of five</strong> through an iterative, client-driven process: gathering requirements, demoing progress, taking feedback and handing the platform over.</li>
+                <li><strong>Set up how we worked:</strong> a Git branch-and-pull-request workflow with branch protection, so five developers could build in parallel without overwriting each other.</li>
+                <li><strong>Built the public site in React,</strong> turning ANIKA's brand guide (colours, type, imagery) into a responsive design with multi-page navigation in React Router.</li>
+            </ul>
+        </section>
+
+        <section class="info-section">
+            <h2>What the Team Built</h2>
+            <ul class="feature-list">
+                <li><strong>Public website:</strong> home, programmes, events with category filters and registration, impact, stories, gallery, get involved, and M-Pesa donations.</li>
+                <li><strong>Admin Desk:</strong> a dashboard for contacts, events, registrations, applications, partners, stories, gallery, newsletter, contributions, impact reports, team and roles &amp; access.</li>
+                <li><strong>WhatsApp assistant:</strong> answers common questions automatically, routes "HELP" conversations to a person, and supports broadcasts and a shared inbox.</li>
+                <li><strong>Backend API:</strong> Flask with SQLAlchemy models and migrations, organised so each developer owned their own models and routes.</li>
+            </ul>
+        </section>
+
+        <section class="info-section">
+            <h2>Tech Stack</h2>
+            <div class="skills-list">
+                <span class="skill-pill">React</span>
+                <span class="skill-pill">Vite</span>
+                <span class="skill-pill">Tailwind CSS</span>
+                <span class="skill-pill">React Router</span>
+                <span class="skill-pill">Recharts</span>
+                <span class="skill-pill">Python</span>
+                <span class="skill-pill">Flask</span>
+                <span class="skill-pill">SQLAlchemy</span>
+                <span class="skill-pill">Git · GitHub</span>
+            </div>
+        </section>
+
+        <section class="info-section">
+            <h2>The Website</h2>
+            <figure class="shot">
+                <img loading="lazy" src="images/projects/anika-site.webp" alt="ANIKA Initiative public website homepage: Silence kills, art airs">
+                <figcaption><a href="https://anikainitiative.com/" target="_blank" rel="noopener">Visit the website <i class="fa-solid fa-arrow-up-right-from-square"></i></a></figcaption>
+            </figure>
+        </section>
+
+        <section class="info-section">
+            <h2>The Admin Desk</h2>
+            <div class="mode-pair">
+                <figure class="shot">
+                    <img loading="lazy" src="images/projects/anika-admin-light.webp" alt="ANIKA Admin Desk dashboard with donations, events and recent activity, light mode">
+                    <figcaption><i class="fa-solid fa-sun"></i> Light mode</figcaption>
+                </figure>
+                <figure class="shot">
+                    <img loading="lazy" src="images/projects/anika-admin-dark.webp" alt="ANIKA Admin Desk dashboard with donations, events and recent activity, dark mode">
+                    <figcaption><i class="fa-solid fa-moon"></i> Dark mode</figcaption>
+                </figure>
+            </div>
+            <p class="shot-note">Sample data. Click a screenshot to enlarge it.</p>
+        </section>
+
+        <div class="contact-footer">
+            <div class="cta-text">
+                <h3>Want to talk about this project?</h3>
+                <p>I'm happy to walk through the code and how we worked as a team.</p>
+            </div>
+            <a href="mailto:jenniferkosencha@gmail.com" class="cta-btn">
+                <i class="fa-solid fa-paper-plane"></i> Get in Touch
+            </a>
+        </div>
+    </main>
+
+    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+        <button class="lightbox-close" onclick="closeLightbox()">×</button>
+        <img id="lightbox-img" src="" alt="">
+    </div>
+
+    <script>
+        document.querySelectorAll('.shot img').forEach(img => img.addEventListener('click', () => {
+            document.getElementById('lightbox-img').src = img.src;
+            document.getElementById('lightbox').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }));
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+        document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
+    </script>
+</body>
+</html>

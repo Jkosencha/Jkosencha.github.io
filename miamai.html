@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Case study: a responsive company website for Mia Mai Limited, a procurement and supply business, built by Jennifer Kosencha.">
+    <link rel="icon" type="image/png" href="images/logo.png">
+    <title>Mia Mai Limited Case Study - Jennifer Kosencha</title>
+    <link rel="stylesheet" href="infopages.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Azeret+Mono:wght@400;500;700&family=Schibsted+Grotesk:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/e13d111ddf.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <nav class="top-nav">
+        <a href="index.html#portfolio" class="back-link"><i class="fa-solid fa-arrow-left"></i> Projects</a>
+        <span class="nav-label">Case Study / Mia Mai Limited</span>
+    </nav>
+
+    <main class="page-wrapper">
+        <header class="page-hero">
+            <span class="tag">Frontend · Solo project</span>
+            <h1>Mia Mai Limited<br>Company Website</h1>
+            <p>A responsive website for an international procurement and supply company serving hotels, NGOs, government institutions and retailers.</p>
+            <div class="case-links">
+                <a href="https://miamailimited.netlify.app/" target="_blank" rel="noopener"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live website</a>
+                <a href="https://github.com/Jkosencha/MIA-MAI_portfolio_website" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> Source code</a>
+            </div>
+        </header>
+
+        <dl class="facts">
+            <div><dt>My role</dt><dd>Sole developer: design and build</dd></div>
+            <div><dt>Client</dt><dd>Mia Mai Limited</dd></div>
+            <div><dt>Status</dt><dd>Live</dd></div>
+        </dl>
+
+        <section class="info-section">
+            <h2>The Brief</h2>
+            <p class="intro-text">Mia Mai supplies food, hospitality products, packaging and uniforms to businesses and institutions. They needed a professional site that explains what they do, shows their product range and turns visitors into quote requests.</p>
+        </section>
+
+        <section class="info-section">
+            <h2>What I Built</h2>
+            <ul class="feature-list">
+                <li><strong>Clear first impression:</strong> a hero that says what the company does in one line, with "Get in Touch" and "Get Quote" calls to action.</li>
+                <li><strong>Product catalogue</strong> covering seafood, poultry, beef, fresh farm produce, dry foods, packaging, staff uniforms and wines.</li>
+                <li><strong>Credibility sections:</strong> vision, mission, years in business and client numbers, with animated counters.</li>
+                <li><strong>Responsive and lightweight:</strong> plain HTML, CSS and JavaScript with no framework, so it loads quickly on mobile data.</li>
+            </ul>
+        </section>
+
+        <section class="info-section">
+            <h2>Tech Stack</h2>
+            <div class="skills-list">
+                <span class="skill-pill">HTML5</span>
+                <span class="skill-pill">CSS3</span>
+                <span class="skill-pill">JavaScript</span>
+                <span class="skill-pill">Responsive Design</span>
+                <span class="skill-pill">Netlify</span>
+            </div>
+        </section>
+
+        <section class="info-section">
+            <h2>The Website</h2>
+            <figure class="shot">
+                <img loading="lazy" src="images/projects/miamai-site.webp" alt="Mia Mai Limited homepage: Your trusted procurement and supply partner">
+                <figcaption><a href="https://miamailimited.netlify.app/" target="_blank" rel="noopener">Visit the website <i class="fa-solid fa-arrow-up-right-from-square"></i></a></figcaption>
+            </figure>
+        </section>
+
+        <div class="contact-footer">
+            <div class="cta-text">
+                <h3>Want to talk about this project?</h3>
+                <p>I'm happy to walk through the code and the decisions behind it.</p>
+            </div>
+            <a href="mailto:jenniferkosencha@gmail.com" class="cta-btn">
+                <i class="fa-solid fa-paper-plane"></i> Get in Touch
+            </a>
+        </div>
+    </main>
+
+    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+        <button class="lightbox-close" onclick="closeLightbox()">×</button>
+        <img id="lightbox-img" src="" alt="">
+    </div>
+
+    <script>
+        document.querySelectorAll('.shot img').forEach(img => img.addEventListener('click', () => {
+            document.getElementById('lightbox-img').src = img.src;
+            document.getElementById('lightbox').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }));
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+        document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
+    </script>
+</body>
+</html>
