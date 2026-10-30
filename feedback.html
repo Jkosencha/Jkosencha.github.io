@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="description" content="Share feedback on a project with Jennifer Kosencha.">
+    <link rel="icon" type="image/png" href="images/logo.png">
+    <title>Project Feedback - Jennifer Kosencha</title>
+    <link rel="stylesheet" href="infopages.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Azeret+Mono:wght@400;500;700&family=Schibsted+Grotesk:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/e13d111ddf.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <nav class="top-nav">
+        <a href="index.html" class="back-link"><i class="fa-solid fa-arrow-left"></i> Home</a>
+        <span class="nav-label">Project Feedback</span>
+    </nav>
+
+    <main class="page-wrapper narrow">
+        <header class="page-hero">
+            <span class="tag">Project Feedback</span>
+            <h1>How did our project go?</h1>
+            <p>Thank you for working with me. Your feedback helps me improve and, with your permission, helps future clients know what to expect. It only takes a minute or two.</p>
+        </header>
+
+        <!-- Shown after a successful submission (the form sends in the background) -->
+        <div class="feedback-done" id="done" hidden>
+            <i class="fa-solid fa-circle-check"></i>
+            <h2>Thank you!</h2>
+            <p>Your feedback has been sent. I really appreciate you taking the time.</p>
+            <a href="index.html" class="cta-btn"><i class="fa-solid fa-arrow-left"></i> Back to the website</a>
+        </div>
+
+        <form class="feedback-form" id="feedbackForm" action="https://formspree.io/f/xeaallay" method="POST">
+            <input type="hidden" name="_subject" id="mailSubject" value="New project feedback">
+            <input type="text" name="_gotcha" class="honey" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+            <fieldset>
+                <legend>Your rating</legend>
+                <p class="field-hint">How happy are you with the project overall?</p>
+                <div class="stars" role="radiogroup" aria-label="Rating out of 5">
+                    <input type="radio" name="Rating" id="star5" value="5 / 5" required>
+                    <label for="star5"><span class="star"><i class="fa-regular fa-star"></i><i class="fa-solid fa-star"></i></span><span class="word">Excellent</span></label>
+                    <input type="radio" name="Rating" id="star4" value="4 / 5">
+                    <label for="star4"><span class="star"><i class="fa-regular fa-star"></i><i class="fa-solid fa-star"></i></span><span class="word">Very good</span></label>
+                    <input type="radio" name="Rating" id="star3" value="3 / 5">
+                    <label for="star3"><span class="star"><i class="fa-regular fa-star"></i><i class="fa-solid fa-star"></i></span><span class="word">Good</span></label>
+                    <input type="radio" name="Rating" id="star2" value="2 / 5">
+                    <label for="star2"><span class="star"><i class="fa-regular fa-star"></i><i class="fa-solid fa-star"></i></span><span class="word">Fair</span></label>
+                    <input type="radio" name="Rating" id="star1" value="1 / 5">
+                    <label for="star1"><span class="star"><i class="fa-regular fa-star"></i><i class="fa-solid fa-star"></i></span><span class="word">Poor</span></label>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Your feedback</legend>
+                <label>How was it working with me?
+                    <textarea name="Feedback" rows="5" required placeholder="A few sentences is perfect. For example: what you needed, how the project went, and what has changed since."></textarea>
+                </label>
+                <label><span>Anything I could have done better? <small>(optional, only I see this)</small></span>
+                    <textarea name="Could improve" rows="3"></textarea>
+                </label>
+            </fieldset>
+
+            <fieldset>
+                <legend>About you</legend>
+                <div class="field-row">
+                    <label>Your name
+                        <input type="text" name="Name" required autocomplete="name">
+                    </label>
+                    <label>Organisation
+                        <input type="text" name="Organisation" id="org" required autocomplete="organization">
+                    </label>
+                </div>
+                <div class="field-row">
+                    <label><span>Your role <small>(optional)</small></span>
+                        <input type="text" name="Role" placeholder="e.g. Director" autocomplete="organization-title">
+                    </label>
+                    <label><span>Project <small>(optional)</small></span>
+                        <input type="text" name="Project" id="project" placeholder="e.g. Company website">
+                    </label>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Can I share your feedback?</legend>
+                <p class="field-hint">I'd love to quote you on my portfolio. I'll check the wording with you before anything goes up.</p>
+                <div class="choices">
+                    <label class="choice"><input type="radio" name="Permission" value="Yes, with my name and organisation" required> Yes, with my name and organisation</label>
+                    <label class="choice"><input type="radio" name="Permission" value="Yes, but anonymously"> Yes, but anonymously</label>
+                    <label class="choice"><input type="radio" name="Permission" value="No, keep it private"> No, keep it private</label>
+                </div>
+            </fieldset>
+
+            <button type="submit" class="cta-btn" id="sendBtn"><i class="fa-solid fa-paper-plane"></i> Send feedback</button>
+            <p class="form-error" id="formError" role="alert" hidden></p>
+        </form>
+    </main>
+
+    <script>
+        const form = document.getElementById("feedbackForm");
+        const params = new URLSearchParams(location.search);
+        // Prefill from the link, e.g. feedback.html?project=Company%20website&org=Mia%20Mai%20Limited
+        if (params.get("project")) document.getElementById("project").value = params.get("project");
+        if (params.get("org")) document.getElementById("org").value = params.get("org");
+
+        // Send in the background (Formspree) and show the thank-you card on success
+        form.addEventListener("submit", async (e) => {
+            e.preventDefault();
+            const org = document.getElementById("org").value.trim();
+            document.getElementById("mailSubject").value = "Project feedback" + (org ? " from " + org : "");
+            const btn = document.getElementById("sendBtn");
+            const error = document.getElementById("formError");
+            btn.disabled = true;
+            error.hidden = true;
+            try {
+                const res = await fetch(form.action, {
+                    method: "POST",
+                    body: new FormData(form),
+                    headers: { Accept: "application/json" },
+                });
+                if (!res.ok) throw new Error();
+                form.hidden = true;
+                document.getElementById("done").hidden = false;
+                window.scrollTo({ top: 0, behavior: "smooth" });
+            } catch {
+                error.textContent = "Sorry, your feedback couldn't be sent. Please try again, or email it to jenniferkosencha@gmail.com.";
+                error.hidden = false;
+                btn.disabled = false;
+            }
+        });
+    </script>
+</body>
+</html>
