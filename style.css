@@ -698,21 +698,10 @@ img {
   font-size: 12px;
   color: var(--muted);
   text-align: center;
-  transition:
-    background var(--transition),
-    color var(--transition);
-}
-.tech:hover {
-  background: var(--accent-soft);
-  color: #fff;
 }
 .tech img {
   width: 38px;
   height: 38px;
-  transition: transform var(--transition);
-}
-.tech:hover img {
-  transform: translateY(-3px) scale(1.06);
 }
 .tech img.mono-icon {
   filter: brightness(0) invert(0.9);

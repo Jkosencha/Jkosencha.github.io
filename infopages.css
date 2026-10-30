@@ -201,10 +201,6 @@ body {
   transition: background 0.3s, border-color 0.3s;
 }
 
-.skill-pill:hover {
-  background: rgba(29, 127, 160, 0.25);
-  border-color: var(--accent);
-}
 
 /* ── Contact Footer ── */
 .contact-footer {
