@@ -410,15 +410,65 @@
 
     <!-- CONTACT -->
     <section id="contact" class="section section-alt">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <span class="section-tag">Get In Touch</span>
+            <h2 class="sub-title">
+              Let's Build Something <span>Useful Together.</span>
+            </h2>
+          </div>
+        </div>
+
+        <div class="routes">
+          <div class="route">
+            <div class="icon-box"><i class="fa-solid fa-briefcase"></i></div>
+            <h3>Looking to work with me?</h3>
+            <p>
+              Whether it's joining your team or building something for your
+              organisation, I'd love to hear about it. My CV has the full
+              picture of my experience, education and projects.
+            </p>
+            <div class="actions">
+              <a
+                href="images/Jennifer_Kosencha_Software_Developer_CV.pdf"
+                download
+                class="btn btn2 btn-sm"
+                >Download CV <i class="fa-solid fa-download"></i
+              ></a>
+              <a
+                href="https://www.linkedin.com/in/jennifer-kosencha-59730325b"
+                target="_blank"
+                rel="noopener"
+                class="btn btn-sm"
+                >LinkedIn <i class="fa-brands fa-linkedin-in"></i
+              ></a>
+            </div>
+          </div>
+
+          <div class="route">
+            <div class="icon-box"><i class="fa-solid fa-handshake"></i></div>
+            <h3>How a project works</h3>
+            <ol class="steps">
+              <li><b>Discovery</b> <span>We talk through the problem.</span></li>
+              <li><b>Scope &amp; quote</b> <span>What I'll build, timeline and price.</span></li>
+              <li><b>Deposit</b> <span>Work starts.</span></li>
+              <li><b>Build</b> <span>Regular check-ins as it takes shape.</span></li>
+              <li><b>Handover &amp; support</b> <span>Training, then maintenance if you need it.</span></li>
+            </ol>
+            <div class="actions">
+              <a href="#submit-form" class="btn btn2 btn-sm" id="quoteBtn"
+                >Get a Quote <i class="fa-solid fa-arrow-right"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <div class="container contact-grid">
         <div class="contact-left">
-          <span class="section-tag">Get In Touch</span>
-          <h2 class="sub-title">
-            Let's Build Something<br /><span>Useful Together.</span>
-          </h2>
           <p>
-            I'm open to full-time developer roles and freelance projects. Tell
-            me what you need and I'll get back to you.
+            Prefer to write directly? Send a message and I'll get back to you.
           </p>
           <div class="contact-items">
             <a href="mailto:jenniferkosencha@gmail.com" class="contact-item">
@@ -597,6 +647,12 @@
           setInterval(() => !paused && positions() > 1 && go(i + 1), 7000);
         }
       })();
+
+      // ── "Get a Quote" prefills the subject and focuses the form ──
+      document.getElementById("quoteBtn").addEventListener("click", () => {
+        document.getElementById("subject").value = "Project quote request";
+        setTimeout(() => document.getElementById("userName").focus(), 400);
+      });
 
       // ── Contact form — opens default mail client ──
       document
