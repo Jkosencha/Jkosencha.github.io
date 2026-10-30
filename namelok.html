@@ -54,6 +54,7 @@
                 <li><strong>One Supabase backend for both apps.</strong> The website and the dashboard read the same connection config and PostgreSQL database, so content edited in the dashboard shows up on the site straight away.</li>
                 <li><strong>Versioned database changes.</strong> The schema lives in the repo, and every change since is a dated SQL file (reports, calendar, child photos, donor funds…), so the database can be rebuilt or audited step by step.</li>
                 <li><strong>Static hosting, no server to maintain.</strong> The dashboard is a React + TypeScript app built with Vite into <code>/admin</code>, so a single Netlify site serves the website and the dashboard.</li>
+                <li><strong>Locked down at the database.</strong> Row Level Security means only signed-in admins can read or change records about children, donors and money, while the public website can only read published stories and site settings. An audit log records which staff member changed what.</li>
                 <li><strong>Privacy by default.</strong> Records about children are sensitive, so the screenshots shown here use invented sample data, never real records.</li>
             </ul>
         </section>
