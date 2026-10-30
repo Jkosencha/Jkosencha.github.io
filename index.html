@@ -376,28 +376,34 @@
       </div>
     </section>
 
-    <!-- BUILT FOR (real clients) -->
-    <section id="clients" class="section">
+    <!-- TESTIMONIALS -->
+    <section id="testimonials" class="section">
       <div class="container">
         <div class="section-head">
           <div>
-            <span class="section-tag">Built For</span>
-            <h2 class="sub-title">Organisations I've Built For</h2>
+            <span class="section-tag">Testimonials</span>
+            <h2 class="sub-title">What Clients Say</h2>
           </div>
         </div>
-        <div class="clients">
-          <a href="namelok.html" class="client"
-            ><b>Namelok Naretoi Home</b><small>Children's home · Narok</small></a
-          >
-          <a href="anika.html" class="client"
-            ><b>ANIKA Initiative</b><small>Arts nonprofit · 5 countries</small></a
-          >
-          <a href="savannah-pos.html" class="client"
-            ><b>Savannah Minimart</b><small>Retail · Kenya</small></a
-          >
-          <a href="miamai.html" class="client"
-            ><b>Mia Mai Limited</b><small>Procurement &amp; supply</small></a
-          >
+        <div class="carousel" id="tCarousel">
+          <button type="button" class="carousel-btn" data-dir="-1" aria-label="Previous testimonial"><i class="fa-solid fa-chevron-left"></i></button>
+          <div class="carousel-track">
+              <!-- Mia Mai Limited -->
+              <figure class="testimonial">
+                <i class="fa-solid fa-quote-left"></i>
+                <blockquote>
+                  Amazing. You have done a fantastic job.
+                </blockquote>
+                <figcaption>
+                  <img class="t-thumb" loading="lazy" src="images/projects/miamai-site.webp" alt="" />
+                  <div>
+                    <b>Jack</b>
+                    <small><a href="miamai.html">Mia Mai Limited</a></small>
+                  </div>
+                </figcaption>
+              </figure>
+          </div>
+          <button type="button" class="carousel-btn" data-dir="1" aria-label="Next testimonial"><i class="fa-solid fa-chevron-right"></i></button>
         </div>
       </div>
     </section>
@@ -553,9 +559,44 @@
         },
         { rootMargin: "-45% 0px -50% 0px" },
       );
-      ["header", "about", "services", "skills", "portfolio", "contact"].forEach(
+      ["header", "about", "services", "skills", "portfolio", "testimonials", "contact"].forEach(
         (id) => observer.observe(document.getElementById(id)),
       );
+
+      // ── Testimonials: a row of cards that scrolls only when there are more than fit ──
+      (function () {
+        const root = document.getElementById("tCarousel");
+        const track = root.querySelector(".carousel-track");
+        const slides = track.children;
+        let i = 0;
+        const step = () => slides[0].offsetWidth + 20;
+        const positions = () =>
+          Math.max(1, slides.length - Math.round((track.clientWidth + 20) / step()) + 1);
+        function update() {
+          root.classList.toggle("static", positions() <= 1);
+          i = Math.min(i, positions() - 1);
+        }
+        function go(n) {
+          i = (n + positions()) % positions();
+          track.scrollTo({ left: i * step(), behavior: "smooth" });
+        }
+        track.addEventListener(
+          "scroll",
+          () => (i = Math.round(track.scrollLeft / step()) || 0),
+          { passive: true },
+        );
+        window.addEventListener("resize", update);
+        root.querySelectorAll(".carousel-btn").forEach((b) =>
+          b.addEventListener("click", () => go(i + Number(b.dataset.dir))),
+        );
+        update();
+        if (!matchMedia("(prefers-reduced-motion: reduce)").matches) {
+          let paused = false;
+          root.addEventListener("mouseenter", () => (paused = true));
+          root.addEventListener("mouseleave", () => (paused = false));
+          setInterval(() => !paused && positions() > 1 && go(i + 1), 7000);
+        }
+      })();
 
       // ── Contact form — opens default mail client ──
       document
