@@ -681,7 +681,7 @@ img {
 /* ── Tech stack ── */
 .tech-panel {
   display: grid;
-  grid-template-columns: repeat(10, 1fr);
+  grid-template-columns: repeat(8, 1fr);
   gap: 6px;
   background: var(--surface);
   border: 1px solid var(--border);
