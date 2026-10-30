@@ -627,6 +627,8 @@ img {
 }
 .service {
   position: relative;
+  color: inherit;
+  text-decoration: none;
   display: flex;
   flex-direction: column;
   background: var(--surface);
@@ -714,6 +716,7 @@ img {
   gap: 24px;
 }
 .project-card {
+  position: relative;
   display: flex;
   flex-direction: column;
   background: var(--surface);
@@ -814,6 +817,17 @@ img {
 }
 .project-links a:hover {
   color: var(--accent2);
+}
+.project-links a.go::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+}
+.thumb,
+.project-links a:not(.go),
+.project-card small a {
+  position: relative;
+  z-index: 1;
 }
 .project-links a.go {
   margin-left: auto;
