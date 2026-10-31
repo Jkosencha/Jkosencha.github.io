@@ -94,17 +94,27 @@
         <section class="info-section">
             <h2>The Dashboard</h2>
             <p class="intro-text section-lead">A live analytics dashboard. Unlike my other projects, the data here comes from the till, sale by sale, so most of what the owner sees is calculated rather than typed in, and new sales appear on every open dashboard as they happen. Cashiers get a separate, simpler dashboard for running their shift.</p>
-            <div class="mode-pair">
-                <figure class="shot">
-                    <img loading="lazy" src="images/projects/savannah-dashboard-light.webp" alt="Savannah Minimart owner dashboard with revenue vs cost, sales by category, payment and partner split, light mode">
-                    <figcaption><i class="fa-solid fa-sun"></i> Light mode</figcaption>
-                </figure>
-                <figure class="shot">
-                    <img loading="lazy" src="images/projects/savannah-dashboard-dark.webp" alt="Savannah Minimart owner dashboard with revenue vs cost, sales by category, payment and partner split, dark mode">
-                    <figcaption><i class="fa-solid fa-moon"></i> Dark mode</figcaption>
-                </figure>
+            <div class="dash-gallery" data-prefix="images/projects/savannah-">
+                <div class="dash-bar">
+                    <div class="dash-tabs" role="tablist" aria-label="Dashboard screens">
+                    <button type="button" role="tab" data-screen="dashboard" data-phone data-alt="Savannah Minimart owner dashboard with revenue vs cost, sales by category, payment and partner split" data-caption="Revenue against cost, today&#x27;s top products, stock alerts, and how sales split by payment method, category and partner.">Overview</button>
+                    <button type="button" role="tab" data-screen="register" data-alt="Savannah POS register with product tiles and the current sale" data-caption="Tap products to build a sale. Each tile shows what&#x27;s left in stock, and the total, discount and VAT are worked out automatically.">Register</button>
+                    <button type="button" role="tab" data-screen="inventory" data-alt="Savannah inventory list with stock levels and owners" data-caption="Every product with its price, stock and whose stock it is, with low stock highlighted and restocking one click away.">Inventory</button>
+                    <button type="button" role="tab" data-screen="sales" data-alt="Savannah sales list by receipt, cashier and payment" data-caption="Every sale by receipt, cashier and payment method, with receipts to reprint and voided sales kept out of the totals.">Sales</button>
+                    <button type="button" role="tab" data-screen="partners" data-alt="Savannah partner split with revenue and profit per partner" data-caption="The shop has two partners. Each restock records whose stock it is, so every sale&#x27;s revenue and profit is credited to the right person.">Partners</button>
+                    </div>
+                    <div class="dash-mode" aria-label="Theme">
+                        <button type="button" data-mode="light"><i class="fa-solid fa-sun"></i> Light</button>
+                        <button type="button" data-mode="dark"><i class="fa-solid fa-moon"></i> Dark</button>
+                    </div>
+                </div>
+                <div class="dash-view" role="tabpanel">
+                    <figure class="shot"><img class="dash-img" src="images/projects/savannah-dashboard-light.webp" alt=""></figure>
+                    <figure class="phone"><div class="frame"><img class="phone-img" loading="lazy" src="images/projects/savannah-mobile-light.webp" alt="Savannah POS dashboard on a phone"></div></figure>
+                </div>
+                <p class="dash-caption"></p>
             </div>
-            <p class="shot-note">Owner view. Click a screenshot to enlarge it.</p>
+            <p class="shot-note">Owner view, sample data. Click a screenshot to enlarge it.</p>
         </section>
 
         <div class="contact-footer">
@@ -123,6 +133,7 @@
         <img id="lightbox-img" src="" alt="">
     </div>
 
+    <script src="gallery.js"></script>
     <script>
         document.querySelectorAll('.shot img').forEach(img => img.addEventListener('click', () => {
             document.getElementById('lightbox-img').src = img.src;

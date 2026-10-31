@@ -84,15 +84,26 @@
         <section class="info-section">
             <h2>The Admin Desk</h2>
             <p class="intro-text section-lead">Part content editor, part CRM. Rather than internal records, the Admin Desk is about the people the organisation reaches: contacts, partners, event registrations and applications, alongside publishing events, stories and the gallery to the website. The WhatsApp assistant adds broadcasts and a shared inbox on top.</p>
-            <div class="mode-pair">
-                <figure class="shot">
-                    <img loading="lazy" src="images/projects/anika-admin-light.webp" alt="ANIKA Admin Desk dashboard with donations, events and recent activity, light mode">
-                    <figcaption><i class="fa-solid fa-sun"></i> Light mode</figcaption>
-                </figure>
-                <figure class="shot">
-                    <img loading="lazy" src="images/projects/anika-admin-dark.webp" alt="ANIKA Admin Desk dashboard with donations, events and recent activity, dark mode">
-                    <figcaption><i class="fa-solid fa-moon"></i> Dark mode</figcaption>
-                </figure>
+            <div class="dash-gallery" data-prefix="images/projects/anika-">
+                <div class="dash-bar">
+                    <div class="dash-tabs" role="tablist" aria-label="Dashboard screens">
+                    <button type="button" role="tab" data-screen="admin" data-phone data-alt="ANIKA Admin Desk dashboard with donations, events and recent activity" data-caption="Money raised, upcoming events, new registrations and recent activity at a glance.">Overview</button>
+                    <button type="button" role="tab" data-screen="events" data-alt="ANIKA events list with capacity and registrations" data-caption="Plan and publish events, and see how full each one is.">Events</button>
+                    <button type="button" role="tab" data-screen="registrations" data-alt="ANIKA event registrations with source and WhatsApp opt-in" data-caption="Everyone signed up for an event, where they signed up, whether they opted into WhatsApp updates, and their status.">Registrations</button>
+                    <button type="button" role="tab" data-screen="applications" data-alt="ANIKA applications list with programme and status" data-caption="Volunteer, artist and partner applications from the website, moved from new to shortlisted to accepted.">Applications</button>
+                    <button type="button" role="tab" data-screen="contacts" data-alt="ANIKA contacts list filtered by type and country" data-caption="One list of everyone who donated, applied or messaged, filterable by type and country.">Contacts</button>
+                    <button type="button" role="tab" data-screen="donations" data-alt="ANIKA donations with references and status" data-caption="Contributions with their payment reference and status, and totals for the month and the year.">Donations</button>
+                    </div>
+                    <div class="dash-mode" aria-label="Theme">
+                        <button type="button" data-mode="light"><i class="fa-solid fa-sun"></i> Light</button>
+                        <button type="button" data-mode="dark"><i class="fa-solid fa-moon"></i> Dark</button>
+                    </div>
+                </div>
+                <div class="dash-view" role="tabpanel">
+                    <figure class="shot"><img class="dash-img" src="images/projects/anika-admin-light.webp" alt=""></figure>
+                    <figure class="phone"><div class="frame"><img class="phone-img" loading="lazy" src="images/projects/anika-mobile-light.webp" alt="ANIKA Admin Desk on a phone"></div></figure>
+                </div>
+                <p class="dash-caption"></p>
             </div>
             <p class="shot-note">Sample data. Click a screenshot to enlarge it.</p>
         </section>
@@ -113,6 +124,7 @@
         <img id="lightbox-img" src="" alt="">
     </div>
 
+    <script src="gallery.js"></script>
     <script>
         document.querySelectorAll('.shot img').forEach(img => img.addEventListener('click', () => {
             document.getElementById('lightbox-img').src = img.src;

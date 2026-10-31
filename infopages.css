@@ -201,7 +201,6 @@ body {
   transition: background 0.3s, border-color 0.3s;
 }
 
-
 /* ── Contact Footer ── */
 .contact-footer {
   margin-top: 72px;
@@ -424,15 +423,6 @@ body {
 }
 .shot figcaption a:hover { text-decoration: underline; }
 
-/* Light and dark screenshots side by side */
-.mode-pair {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
-}
-.mode-pair .shot {
-  margin: 0;
-}
 .section-lead { margin-bottom: 24px; }
 .client-quote {
   margin-top: 24px;
@@ -449,16 +439,73 @@ body {
   margin-top: 16px;
 }
 
-/* ── Responsive ── */
-@media (max-width: 600px) {
-  .top-nav { padding: 16px 20px; }
-  .top-nav .nav-label { display: none; }
-  .mode-pair { grid-template-columns: 1fr; }
-  .page-wrapper { padding: 100px 20px 60px; }
-  .contact-footer { flex-direction: column; text-align: center; }
-  .gallery-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
-  .page-hero h1 { font-size: 28px; }
+/* Dashboard gallery: one screen at a time, tabs + light/dark switch */
+.dash-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 18px;
 }
+.dash-tabs, .dash-mode {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  padding: 4px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+}
+.dash-tabs button, .dash-mode button {
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--text-muted);
+  background: none;
+  border: 0;
+  border-radius: 7px;
+  padding: 8px 12px;
+  cursor: pointer;
+  transition: color 0.2s, background 0.2s;
+}
+.dash-tabs button:hover, .dash-mode button:hover { color: var(--text); }
+.dash-tabs button[aria-selected="true"], .dash-mode button[aria-pressed="true"] {
+  color: #fff;
+  background: var(--accent);
+}
+.dash-view {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 190px;
+  gap: 20px;
+  align-items: start;
+}
+.dash-view:not(.with-phone) { grid-template-columns: minmax(0, 1fr); }
+.dash-view .shot { margin: 0; }
+.dash-view .phone { display: none; }
+.dash-view.with-phone .phone { display: block; }
+.phone .frame {
+  height: 520px;
+  overflow-y: auto;
+  border: 1px solid var(--border);
+  border-radius: 22px;
+  padding: 6px;
+  background: var(--surface);
+  scrollbar-width: thin;
+}
+.phone .frame img {
+  width: 100%;
+  display: block;
+  border: 0;
+  border-radius: 16px;
+  cursor: default;
+}
+.dash-caption {
+  margin-top: 16px;
+  font-size: 15px;
+  color: var(--text);
+}
+.dash-caption strong { color: var(--accent-light); font-weight: 600; }
+
 /* ── Company profile layout sketches ── */
 .profile-note { margin-top: 24px; }
 .profile-points { margin: 20px 0 32px; }
@@ -533,7 +580,6 @@ body {
 .pg .chips { display: flex; flex-wrap: wrap; gap: 4px; }
 .pg .chips i { width: 28%; height: 8px; border-radius: 6px; background: rgba(218, 165, 30, 0.45); }
 .pg .band { display: block; height: 8%; margin: 0 -12% -12%; background: var(--gold); }
-
 
 @media (max-width: 760px) {
   .profile-pages { grid-template-columns: repeat(3, minmax(0, 1fr)); }

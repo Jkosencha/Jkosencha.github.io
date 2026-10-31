@@ -87,15 +87,26 @@
         <section class="info-section">
             <h2>The Dashboard</h2>
             <p class="intro-text section-lead">A records system with a content editor built in. A small team of staff keep sensitive records about the children, donors and money, and the same dashboard publishes stories and photos to the public website. The home screen is an overview: who is in care, how donations are trending and what's coming up on the calendar.</p>
-            <div class="mode-pair">
-                <figure class="shot">
-                    <img loading="lazy" src="images/projects/namelok-dashboard-light.webp" alt="Namelok admin dashboard with children in care, donations chart and calendar, light mode">
-                    <figcaption><i class="fa-solid fa-sun"></i> Light mode</figcaption>
-                </figure>
-                <figure class="shot">
-                    <img loading="lazy" src="images/projects/namelok-dashboard-dark.webp" alt="Namelok admin dashboard with children in care, donations chart and calendar, dark mode">
-                    <figcaption><i class="fa-solid fa-moon"></i> Dark mode</figcaption>
-                </figure>
+            <div class="dash-gallery" data-prefix="images/projects/namelok-">
+                <div class="dash-bar">
+                    <div class="dash-tabs" role="tablist" aria-label="Dashboard screens">
+                    <button type="button" role="tab" data-screen="dashboard" data-phone data-alt="Namelok admin dashboard with children in care, donations chart and calendar" data-caption="Who is in care, how donations are trending and what&#x27;s coming up on the calendar, on one screen.">Overview</button>
+                    <button type="button" role="tab" data-screen="donors" data-alt="Namelok donor list with last and next gifts" data-caption="Every donor with their last gift, when the next one is expected and how much of their money is left. Late gifts are flagged.">Donors</button>
+                    <button type="button" role="tab" data-screen="donor" data-alt="Namelok donor page with funds received, spent and left" data-caption="One donor&#x27;s gifts, what was spent from their funds, what&#x27;s left and the children they sponsor, with a quarterly statement ready to send.">Donor detail</button>
+                    <button type="button" role="tab" data-screen="expenses" data-alt="Namelok expenses list with receipts and fund paid from" data-caption="Money spent, with the receipt attached and the donor fund it came from, filtered by quarter, fund and category.">Expenses</button>
+                    <button type="button" role="tab" data-screen="calendar" data-alt="Namelok shared calendar with colour-coded events" data-caption="Staff meetings, school visits, children&#x27;s care and donor dates in one colour-coded calendar.">Calendar</button>
+                    <button type="button" role="tab" data-screen="signin" data-single data-alt="Namelok staff sign-in page" data-caption="The dashboard is for staff only. Forgotten passwords are reset by the director, and visitors who are just looking can open a demo with sample data.">Sign in</button>
+                    </div>
+                    <div class="dash-mode" aria-label="Theme">
+                        <button type="button" data-mode="light"><i class="fa-solid fa-sun"></i> Light</button>
+                        <button type="button" data-mode="dark"><i class="fa-solid fa-moon"></i> Dark</button>
+                    </div>
+                </div>
+                <div class="dash-view" role="tabpanel">
+                    <figure class="shot"><img class="dash-img" src="images/projects/namelok-dashboard-light.webp" alt=""></figure>
+                    <figure class="phone"><div class="frame"><img class="phone-img" loading="lazy" src="images/projects/namelok-mobile-light.webp" alt="Namelok dashboard on a phone"></div></figure>
+                </div>
+                <p class="dash-caption"></p>
             </div>
             <p class="shot-note">Sample data. Click a screenshot to enlarge it.</p>
         </section>
@@ -116,6 +127,7 @@
         <img id="lightbox-img" src="" alt="">
     </div>
 
+    <script src="gallery.js"></script>
     <script>
         document.querySelectorAll('.shot img').forEach(img => img.addEventListener('click', () => {
             document.getElementById('lightbox-img').src = img.src;
