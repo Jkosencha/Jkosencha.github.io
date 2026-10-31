@@ -712,8 +712,7 @@ img {
 /* ── Project cards ── */
 .project-list {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 24px;
+  gap: 28px;
 }
 .project-card {
   position: relative;
@@ -844,6 +843,77 @@ img {
 .project-card:hover .project-links a.go {
   border-color: var(--accent2);
   background: var(--accent-soft);
+}
+
+/* Each project is a full-width row; the image side alternates */
+.project-card {
+  flex-direction: row;
+}
+.project-card:nth-child(even) {
+  flex-direction: row-reverse;
+}
+.project-card .thumb {
+  flex: 0 0 56%;
+  aspect-ratio: auto;
+  min-height: 340px;
+  border-bottom: 0;
+  border-right: 1px solid var(--border);
+}
+.project-card:nth-child(even) .thumb {
+  border-right: 0;
+  border-left: 1px solid var(--border);
+}
+.project-card .thumb img.back {
+  position: absolute;
+  inset: 0;
+}
+/* Website behind, dashboard in front */
+.thumb.layered {
+  background: linear-gradient(160deg, var(--surface2), var(--bg));
+}
+.thumb.layered img {
+  position: absolute;
+  height: auto;
+  border-radius: 8px;
+  border: 1px solid var(--border-strong);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.45);
+}
+.thumb.layered img.back {
+  inset: auto;
+  top: 28px;
+  left: 28px;
+  width: 72%;
+  height: 72%;
+}
+.thumb.layered img.front {
+  right: 24px;
+  bottom: 24px;
+  width: 58%;
+  height: 62%;
+  object-fit: cover;
+  object-position: top left;
+}
+.thumb.layered img.front.phone {
+  width: 22%;
+  height: 80%;
+  border-radius: 14px;
+}
+.project-card:hover .thumb.layered img {
+  transform: translateY(-4px);
+}
+.project-body {
+  justify-content: center;
+  padding: 32px 34px;
+}
+.project-body .outcome {
+  display: flex;
+  gap: 10px;
+  align-items: baseline;
+  color: var(--text);
+  font-size: 14px;
+}
+.outcome i {
+  color: var(--accent2);
 }
 
 /* ── Testimonials ── */
@@ -1190,6 +1260,21 @@ footer p {
 }
 
 @media (max-width: 860px) {
+  .project-card,
+  .project-card:nth-child(even) {
+    flex-direction: column;
+  }
+  .project-card .thumb,
+  .project-card:nth-child(even) .thumb {
+    flex: none;
+    aspect-ratio: 16 / 10;
+    min-height: 0;
+    border: 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .thumb.layered img.back { top: 16px; left: 16px; }
+  .thumb.layered img.front { right: 14px; bottom: 14px; }
+  .project-body { padding: 22px 24px 20px; }
   .container {
     padding: 0 20px;
   }
