@@ -433,6 +433,7 @@ body {
 .mode-pair .shot {
   margin: 0;
 }
+.section-lead { margin-bottom: 24px; }
 .shot-note {
   font-size: 13px;
   color: var(--text-muted);
