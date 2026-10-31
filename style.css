@@ -957,6 +957,13 @@ img {
   font-size: 44px;
   color: rgba(41, 168, 212, 0.16);
 }
+.t-stars {
+  display: flex;
+  gap: 4px;
+  margin-bottom: 14px;
+  font-size: 14px;
+  color: var(--accent2);
+}
 .testimonial blockquote {
   padding-right: 48px;
   font-style: italic;
