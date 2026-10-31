@@ -36,7 +36,7 @@
 
         <section class="info-section">
             <h2>The Problem</h2>
-            <p class="intro-text">The shop tracked sales on paper. The owner had no live view of stock or takings, cashiers needed a fast till that works with a barcode scanner, and the internet in the shop isn't always reliable. Money and stock also had to add up exactly, for every cashier and every partner in the business.</p>
+            <p class="intro-text">The shop ran on paper. Sales, stock and the books were all tracked by hand, and every total meant a manual calculation, so the owner had no live view of stock or takings. Cashiers needed a fast till that works with a barcode scanner, and the internet in the shop isn't always reliable. Money and stock also had to add up exactly, for every cashier and every partner in the business.</p>
         </section>
 
         <section class="info-section">
@@ -52,8 +52,9 @@
         </section>
 
         <section class="info-section">
-            <h2>Technical Decisions</h2>
+            <h2>Key Decisions</h2>
             <ul class="feature-list">
+                <li><strong>Replace the paper books, not just the till.</strong> The real cost of paper was the manual arithmetic, so stock levels, daily totals, profit and partner splits are all calculated automatically from each sale. Nobody has to add up a column by hand.</li>
                 <li><strong>Business rules live in the database.</strong> Checkout, void and un-void, FIFO stock allocation and partner reports are PostgreSQL functions, so totals and stock stay consistent whichever device rings up the sale.</li>
                 <li><strong>Permissions enforced by Row Level Security,</strong> not just by hiding buttons. Even if someone bypasses the interface, a cashier can't read profit figures or edit stock.</li>
                 <li><strong>Offline-first as an installable PWA.</strong> The app caches itself with Workbox and stores the product list and pending sales in IndexedDB, so the till keeps working without internet.</li>

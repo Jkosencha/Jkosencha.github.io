@@ -49,7 +49,7 @@
         </section>
 
         <section class="info-section">
-            <h2>Technical Decisions</h2>
+            <h2>Key Decisions</h2>
             <ul class="feature-list">
                 <li><strong>One Supabase backend for both apps.</strong> The website and the dashboard read the same connection config and PostgreSQL database, so content edited in the dashboard shows up on the site straight away.</li>
                 <li><strong>Versioned database changes.</strong> The schema lives in the repo, and every change since is a dated SQL file (reports, calendar, child photos, donor funds…), so the database can be rebuilt or audited step by step.</li>
