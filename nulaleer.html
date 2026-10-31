@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Case study: an online shop and admin dashboard for Nula Leer, a handmade leather goods brand in Nairobi, with M-Pesa and card payments, built by Jennifer Kosencha.">
+    <link rel="icon" type="image/png" href="images/logo.png">
+    <title>Nula Leer Case Study - Jennifer Kosencha</title>
+    <link rel="stylesheet" href="infopages.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Azeret+Mono:wght@400;500;700&family=Schibsted+Grotesk:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/e13d111ddf.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <nav class="top-nav">
+        <a href="index.html#portfolio" class="back-link"><i class="fa-solid fa-arrow-left"></i> Projects</a>
+        <span class="nav-label">Case Study / Nula Leer</span>
+    </nav>
+
+    <main class="page-wrapper">
+        <header class="page-hero">
+            <span class="tag">Full-stack · E-commerce</span>
+            <h1>Nula Leer<br>Online Shop &amp; Admin Dashboard</h1>
+            <p>An online shop for Nula Leer, a handmade leather goods brand in Nairobi, with M-Pesa and card payments, and a dashboard that takes every order from payment to delivery.</p>
+            <div class="case-links">
+                <a href="https://nulaleer.netlify.app/" target="_blank" rel="noopener"><i class="fa-solid fa-arrow-up-right-from-square"></i> Visit the shop</a>
+            </div>
+        </header>
+
+        <dl class="facts">
+            <div><dt>My role</dt><dd>Design, build, payments, deployment</dd></div>
+            <div><dt>Client</dt><dd>Nula Leer, Nairobi</dd></div>
+            <div><dt>Status</dt><dd>In progress, pre-launch</dd></div>
+        </dl>
+
+        <section class="info-section">
+            <h2>The Problem</h2>
+            <p class="intro-text">Nula Leer sells online first, to customers in Kenya and abroad. Without a shop, every order would mean back-and-forth on WhatsApp to agree the price, collect payment and arrange delivery, all tracked by hand. The brand needed a proper shop that takes M-Pesa and card payments, and one place to run each order through to delivery, with customers kept updated without extra messages.</p>
+        </section>
+
+        <section class="info-section">
+            <h2>What I Built</h2>
+            <ul class="feature-list">
+                <li><strong>Online shop:</strong> collections, product pages, cart and checkout, with delivery fees shown at checkout and a WhatsApp chat button.</li>
+                <li><strong>Payments:</strong> customers choose M-Pesa or card (including international cards and Apple Pay) and pay on Paystack's secure page.</li>
+                <li><strong>Admin dashboard:</strong> sales and best sellers at a glance, orders filtered by status and updated several at a time, an order page with its full history, products with stock and colours, and a customer list.</li>
+                <li><strong>Automatic updates:</strong> customers get an email and an SMS when their order is paid and again when it ships.</li>
+                <li><strong>Search and sharing:</strong> a search description and social preview tags, so the shop looks right on Google and when its link is shared.</li>
+            </ul>
+        </section>
+
+        <section class="info-section">
+            <h2>Key Decisions</h2>
+            <ul class="feature-list">
+                <li><strong>The server sets the price.</strong> Prices and delivery fees are worked out in serverless functions, never taken from the browser, so nobody can edit a total before paying.</li>
+                <li><strong>Only a confirmed, full payment counts.</strong> Paystack confirms each payment with a signed webhook, and an order is marked paid only when the amount matches exactly.</li>
+                <li><strong>Card details never touch the site.</strong> Payment happens on Paystack's page, which keeps card data off the shop's servers entirely.</li>
+                <li><strong>Locked down at the database.</strong> Row-level security in Supabase means only approved admins can see orders and customer details.</li>
+                <li><strong>Privacy-friendly analytics.</strong> Umami counts visitors without cookies, so there is no cookie banner in the way of shopping.</li>
+            </ul>
+        </section>
+
+        <section class="info-section">
+            <h2>Tech Stack</h2>
+            <table class="stack-table">
+                <tr><th>Frontend</th><td>React 19, React Router, JavaScript, CSS<span>The shop pages, cart, checkout and admin screens. The dashboard adds TanStack Table, Recharts, Radix UI, cmdk search and Lucide icons.</span></td></tr>
+                <tr><th>Backend</th><td>Node.js serverless functions on Netlify<span>Works out prices, creates orders, talks to Paystack, checks payments are genuine, sends emails and SMS, and checks who can change orders.</span></td></tr>
+                <tr><th>Database &amp; sign-in</th><td>Supabase: PostgreSQL and Auth, with row-level security<span>Stores orders and controls who can see them.</span></td></tr>
+                <tr><th>Outside services</th><td>Paystack, Resend, Africa's Talking, Umami<span>Payments, order emails, SMS and visitor counts.</span></td></tr>
+            </table>
+        </section>
+
+        <section class="info-section">
+            <h2>The Shop</h2>
+            <figure class="shot">
+                <img loading="lazy" src="images/projects/nulaleer-shop.webp" alt="Nula Leer shop homepage: Leather goods, made by hand to be carried every day">
+                <figcaption><a href="https://nulaleer.netlify.app/" target="_blank" rel="noopener">Visit the shop <i class="fa-solid fa-arrow-up-right-from-square"></i></a></figcaption>
+            </figure>
+        </section>
+
+        <section class="info-section">
+            <h2>The Dashboard</h2>
+            <p class="intro-text section-lead">An order desk for a small handmade brand. Everything that happens after a customer pays, from preparing the piece to delivery, is run from here, and the customer is updated automatically at each step.</p>
+
+            <div class="dash-gallery" data-prefix="images/projects/nulaleer-">
+                <div class="dash-bar">
+                    <div class="dash-tabs" role="tablist" aria-label="Dashboard screens">
+                    <button type="button" role="tab" data-screen="overview" data-phone data-alt="Nula Leer dashboard overview with sales chart, order status and best sellers" data-caption="Sales for the last 30 days, orders by status, what needs preparing and the best sellers, so the day starts with what matters.">Overview</button>
+                    <button type="button" role="tab" data-screen="orders" data-alt="Nula Leer orders list filtered by status" data-caption="Filter by status, search by name or phone, and tick several orders to update them at once.">Orders</button>
+                    <button type="button" role="tab" data-screen="order" data-alt="Nula Leer order page with progress steps, items, customer and payment" data-caption="Each order&#x27;s progress from payment to delivery, its full history, the customer&#x27;s details and the Paystack payment reference.">Order detail</button>
+                    <button type="button" role="tab" data-screen="products" data-alt="Nula Leer products grid with prices, colours and availability" data-caption="Every piece with its price, colours and availability, including made-to-order lead times and low-stock warnings.">Products</button>
+                    <button type="button" role="tab" data-screen="customers" data-alt="Nula Leer customer list with orders and spend" data-caption="Who has ordered, how often and how much, with a WhatsApp link for each customer.">Customers</button>
+                    <button type="button" role="tab" data-screen="signin" data-alt="Nula Leer dashboard sign-in page" data-caption="The dashboard is behind a sign-in, and only approved admins can see orders and customer details.">Sign in</button>
+                    </div>
+                    <div class="dash-mode" aria-label="Theme">
+                        <button type="button" data-mode="light"><i class="fa-solid fa-sun"></i> Light</button>
+                        <button type="button" data-mode="dark"><i class="fa-solid fa-moon"></i> Dark</button>
+                    </div>
+                </div>
+                <div class="dash-view" role="tabpanel">
+                    <figure class="shot"><img class="dash-img" src="images/projects/nulaleer-overview-light.webp" alt=""></figure>
+                    <figure class="phone"><div class="frame"><img class="phone-img" loading="lazy" src="images/projects/nulaleer-mobile-light.webp" alt="Nula Leer dashboard overview on a phone"></div></figure>
+                </div>
+                <p class="dash-caption"></p>
+            </div>
+            <p class="shot-note">Sample products and customers. Click a screenshot to enlarge it.</p>
+        </section>
+
+        <div class="contact-footer">
+            <div class="cta-text">
+                <h3>Want a shop like this?</h3>
+                <p>I'm happy to walk through how it works and what your business would need.</p>
+            </div>
+            <a href="mailto:jenniferkosencha@gmail.com" class="cta-btn">
+                <i class="fa-solid fa-paper-plane"></i> Get in Touch
+            </a>
+        </div>
+    </main>
+
+    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+        <button class="lightbox-close" onclick="closeLightbox()">×</button>
+        <img id="lightbox-img" src="" alt="">
+    </div>
+
+    <script src="gallery.js"></script>
+    <script>
+        document.querySelectorAll('.shot img').forEach(img => img.addEventListener('click', () => {
+            document.getElementById('lightbox-img').src = img.src;
+            document.getElementById('lightbox').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }));
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+        document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
+    </script>
+</body>
+</html>

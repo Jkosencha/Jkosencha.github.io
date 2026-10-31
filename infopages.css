@@ -201,6 +201,7 @@ body {
   transition: background 0.3s, border-color 0.3s;
 }
 
+
 /* ── Contact Footer ── */
 .contact-footer {
   margin-top: 72px;
@@ -506,6 +507,41 @@ body {
 }
 .dash-caption strong { color: var(--accent-light); font-weight: 600; }
 
+.stack-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 15px;
+}
+.stack-table th, .stack-table td {
+  text-align: left;
+  vertical-align: top;
+  padding: 14px 16px 14px 0;
+  border-bottom: 1px solid var(--border);
+}
+.stack-table th {
+  width: 30%;
+  font-family: var(--mono);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--accent-light);
+}
+.stack-table td span { display: block; color: var(--text-muted); font-size: 14px; }
+
+/* ── Responsive ── */
+@media (max-width: 600px) {
+  .top-nav { padding: 16px 20px; }
+  .top-nav .nav-label { display: none; }
+  .dash-view.with-phone { grid-template-columns: minmax(0, 1fr); }
+  .phone .frame { width: 220px; margin: 0 auto; }
+  .stack-table th { width: auto; display: block; padding-bottom: 4px; border: 0; }
+  .stack-table td { display: block; padding-top: 0; }
+  .page-wrapper { padding: 100px 20px 60px; }
+  .contact-footer { flex-direction: column; text-align: center; }
+  .gallery-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
+  .page-hero h1 { font-size: 28px; }
+}
 /* ── Company profile layout sketches ── */
 .profile-note { margin-top: 24px; }
 .profile-points { margin: 20px 0 32px; }
@@ -580,6 +616,7 @@ body {
 .pg .chips { display: flex; flex-wrap: wrap; gap: 4px; }
 .pg .chips i { width: 28%; height: 8px; border-radius: 6px; background: rgba(218, 165, 30, 0.45); }
 .pg .band { display: block; height: 8%; margin: 0 -12% -12%; background: var(--gold); }
+
 
 @media (max-width: 760px) {
   .profile-pages { grid-template-columns: repeat(3, minmax(0, 1fr)); }
